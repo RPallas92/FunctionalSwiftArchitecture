@@ -14,6 +14,9 @@
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
 		9609895C1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */; };
+		9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896C1FD5B5450062ACDC /* Abstract.framework */; };
+		960989701FD5B5460062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
+		960989711FD5B5460062ACDC /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896E1FD5B5460062ACDC /* SwiftCheck.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		960989571FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionalSwiftArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalSwiftArchitectureTests.swift; sourceTree = "<group>"; };
 		9609895D1FD5A01B0062ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9609896C1FD5B5450062ACDC /* Abstract.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Abstract.framework; path = Carthage/Build/iOS/Abstract.framework; sourceTree = "<group>"; };
+		9609896D1FD5B5460062ACDC /* FunctionalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FunctionalKit.framework; path = Carthage/Build/iOS/FunctionalKit.framework; sourceTree = "<group>"; };
+		9609896E1FD5B5460062ACDC /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/iOS/SwiftCheck.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
+				960989701FD5B5460062ACDC /* FunctionalKit.framework in Frameworks */,
+				960989711FD5B5460062ACDC /* SwiftCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +73,7 @@
 				960989431FD5A01B0062ACDC /* FunctionalSwiftArchitecture */,
 				9609895A1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests */,
 				960989421FD5A01B0062ACDC /* Products */,
+				9609896B1FD5B5450062ACDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +109,16 @@
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
 		};
+		9609896B1FD5B5450062ACDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9609896C1FD5B5450062ACDC /* Abstract.framework */,
+				9609896D1FD5B5460062ACDC /* FunctionalKit.framework */,
+				9609896E1FD5B5460062ACDC /* SwiftCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +129,7 @@
 				9609893D1FD5A01B0062ACDC /* Sources */,
 				9609893E1FD5A01B0062ACDC /* Frameworks */,
 				9609893F1FD5A01B0062ACDC /* Resources */,
+				960989721FD5B5550062ACDC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,6 +217,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		960989721FD5B5550062ACDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCheck.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftCheck.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9609893D1FD5A01B0062ACDC /* Sources */ = {
@@ -359,6 +402,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Z8G52XB6J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FunctionalSwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.rpallas92.FunctionalSwiftArchitecture;
@@ -374,6 +421,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Z8G52XB6J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FunctionalSwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.rpallas92.FunctionalSwiftArchitecture;

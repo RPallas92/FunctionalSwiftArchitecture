@@ -1,0 +1,27 @@
+{
+  "Mac" : [
+    {
+      "name" : "Abstract",
+      "hash" : "b6725a7ce7d3555f8f2c0c5c62fd0771e1a763fb65edd785bb7f00bf25c10104"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "Abstract",
+      "hash" : "4751f1afbf6c1e46ff5f3a7f2ff1a98e37020b588079dc207edae5d504a7acd4"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "Abstract",
+      "hash" : "fce93d3ee88171e08da4016b8ee659a421ee6419ef5ad0a242ea3483bf048b6d"
+    }
+  ],
+  "commitish" : "ead45c334093a0bde679d21d3a08eefb20094f1d",
+  "iOS" : [
+    {
+      "name" : "Abstract",
+      "hash" : "2c7fb22afa514d90d1211a37151d9357dd1bfad0fd7ead3aa69908af12b9d142"
+    }
+  ]
+}

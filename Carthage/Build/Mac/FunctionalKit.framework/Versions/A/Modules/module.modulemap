@@ -1,0 +1,4 @@
+framework module FunctionalKit {
+    header "FunctionalKit-Swift.h"
+    requires objc
+}

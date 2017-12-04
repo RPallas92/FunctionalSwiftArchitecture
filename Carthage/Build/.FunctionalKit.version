@@ -1,0 +1,21 @@
+{
+  "Mac" : [
+    {
+      "name" : "FunctionalKit",
+      "hash" : "e6da3471b32dff0ce83afea1761096ebd9b6748a848ddd9d93a81717f2136cfa"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "87bda280cf2881f2cc159809adc4de8fa69f165f",
+  "iOS" : [
+    {
+      "name" : "FunctionalKit",
+      "hash" : "1b507135dfdd681af2f6c9d6a88c291808e3a3f005b181db8453ad3c41fc245d"
+    }
+  ]
+}

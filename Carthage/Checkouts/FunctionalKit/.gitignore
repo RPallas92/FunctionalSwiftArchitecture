@@ -1,0 +1,7 @@
+.DS_Store
+/.build
+/Packages
+FunctionalKit.xcodeproj/xcuserdata
+FunctionalKit.xcodeproj/project.xcworkspace/xcuserdata
+Carthage/Checkouts
+*.bcsymbolmap

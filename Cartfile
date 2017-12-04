@@ -1,0 +1,3 @@
+github "typelift/Abstract" "master"
+github "typelift/SwiftCheck" "master"
+github "facile-it/FunctionalKit" "master"
