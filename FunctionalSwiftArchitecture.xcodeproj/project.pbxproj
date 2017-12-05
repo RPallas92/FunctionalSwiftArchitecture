@@ -15,8 +15,7 @@
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
 		9609895C1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */; };
 		9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896C1FD5B5450062ACDC /* Abstract.framework */; };
-		960989701FD5B5460062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
-		960989711FD5B5460062ACDC /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896E1FD5B5460062ACDC /* SwiftCheck.framework */; };
+		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
 				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
-				960989701FD5B5460062ACDC /* FunctionalKit.framework in Frameworks */,
-				960989711FD5B5460062ACDC /* SwiftCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,12 +225,10 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftCheck.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftCheck.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

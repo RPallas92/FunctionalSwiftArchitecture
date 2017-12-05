@@ -12,10 +12,6 @@
     {
       "name" : "SwiftCheck",
       "hash" : "bbf51f8220d594b3fb011220e8e6ce0a41cfdb69231db4fd51a9d5e566590d04"
-    },
-    {
-      "name" : "SwiftCheck",
-      "hash" : "bbf51f8220d594b3fb011220e8e6ce0a41cfdb69231db4fd51a9d5e566590d04"
     }
   ],
   "commitish" : "d7a794b14f26ccebc0b396e1cc6bd6698b62d3ce",

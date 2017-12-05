@@ -11,11 +11,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "87bda280cf2881f2cc159809adc4de8fa69f165f",
+  "commitish" : "66507a791aad447de4bfecc9eb66f0278dae351b",
   "iOS" : [
     {
       "name" : "FunctionalKit",
-      "hash" : "1b507135dfdd681af2f6c9d6a88c291808e3a3f005b181db8453ad3c41fc245d"
+      "hash" : "1788341007779b85e6b05539e6ae48e91f82a719e9541e1c8bbedb51bd3564fa"
     }
   ]
 }
