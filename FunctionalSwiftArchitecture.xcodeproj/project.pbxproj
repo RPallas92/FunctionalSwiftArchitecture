@@ -16,6 +16,16 @@
 		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* DetailViewController.swift */; };
 		960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897C1FD6B6D10062ACDC /* MasterViewController.swift */; };
+		9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */; };
+		9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609898C1FD6BA280062ACDC /* AsyncResult.swift */; };
+		9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609898E1FD6BA610062ACDC /* JokeError.swift */; };
+		960989911FD6BD1A0062ACDC /* JokeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989901FD6BD1A0062ACDC /* JokeContext.swift */; };
+		960989941FD6BFD60062ACDC /* JokeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989931FD6BFD60062ACDC /* JokeDto.swift */; };
+		960989961FD6DC0E0062ACDC /* CategoryDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989951FD6DC0E0062ACDC /* CategoryDto.swift */; };
+		960989991FD6E3240062ACDC /* DataMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989981FD6E3240062ACDC /* DataMappers.swift */; };
+		9609899B1FD6E36C0062ACDC /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899A1FD6E36C0062ACDC /* Joke.swift */; };
+		9609899D1FD6E3C80062ACDC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899C1FD6E3C80062ACDC /* Category.swift */; };
+		9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899E1FD6E4190062ACDC /* JokesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +53,16 @@
 		9609896E1FD5B5460062ACDC /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/iOS/SwiftCheck.framework; sourceTree = "<group>"; };
 		9609897B1FD6B6D10062ACDC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9609897C1FD6B6D10062ACDC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesNetworkDataSource.swift; sourceTree = "<group>"; };
+		9609898C1FD6BA280062ACDC /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
+		9609898E1FD6BA610062ACDC /* JokeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeError.swift; sourceTree = "<group>"; };
+		960989901FD6BD1A0062ACDC /* JokeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeContext.swift; sourceTree = "<group>"; };
+		960989931FD6BFD60062ACDC /* JokeDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDto.swift; sourceTree = "<group>"; };
+		960989951FD6DC0E0062ACDC /* CategoryDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDto.swift; sourceTree = "<group>"; };
+		960989981FD6E3240062ACDC /* DataMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMappers.swift; sourceTree = "<group>"; };
+		9609899A1FD6E36C0062ACDC /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		9609899C1FD6E3C80062ACDC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9609899E1FD6E4190062ACDC /* JokesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,7 @@
 		960989431FD5A01B0062ACDC /* FunctionalSwiftArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				9609898B1FD6BA170062ACDC /* functional */,
 				9609897F1FD6B6D10062ACDC /* data */,
 				960989811FD6B6D10062ACDC /* di */,
 				960989801FD6B6D10062ACDC /* domain */,
@@ -147,7 +168,9 @@
 		9609897F1FD6B6D10062ACDC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				960989921FD6BFBC0062ACDC /* datamodel */,
 				960989841FD6B7110062ACDC /* datasource */,
+				9609899E1FD6E4190062ACDC /* JokesRepository.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -180,6 +203,7 @@
 		960989851FD6B7110062ACDC /* remote */ = {
 			isa = PBXGroup;
 			children = (
+				960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */,
 			);
 			path = remote;
 			sourceTree = "<group>";
@@ -187,6 +211,7 @@
 		960989861FD6B71E0062ACDC /* context */ = {
 			isa = PBXGroup;
 			children = (
+				960989901FD6BD1A0062ACDC /* JokeContext.swift */,
 			);
 			path = context;
 			sourceTree = "<group>";
@@ -194,6 +219,9 @@
 		960989871FD6B73D0062ACDC /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				9609898E1FD6BA610062ACDC /* JokeError.swift */,
+				9609899A1FD6E36C0062ACDC /* Joke.swift */,
+				9609899C1FD6E3C80062ACDC /* Category.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -203,6 +231,32 @@
 			children = (
 			);
 			path = usecase;
+			sourceTree = "<group>";
+		};
+		9609898B1FD6BA170062ACDC /* functional */ = {
+			isa = PBXGroup;
+			children = (
+				9609898C1FD6BA280062ACDC /* AsyncResult.swift */,
+			);
+			path = functional;
+			sourceTree = "<group>";
+		};
+		960989921FD6BFBC0062ACDC /* datamodel */ = {
+			isa = PBXGroup;
+			children = (
+				960989971FD6E31A0062ACDC /* mappers */,
+				960989931FD6BFD60062ACDC /* JokeDto.swift */,
+				960989951FD6DC0E0062ACDC /* CategoryDto.swift */,
+			);
+			path = datamodel;
+			sourceTree = "<group>";
+		};
+		960989971FD6E31A0062ACDC /* mappers */ = {
+			isa = PBXGroup;
+			children = (
+				960989981FD6E3240062ACDC /* DataMappers.swift */,
+			);
+			path = mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +383,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9609899B1FD6E36C0062ACDC /* Joke.swift in Sources */,
+				960989991FD6E3240062ACDC /* DataMappers.swift in Sources */,
+				960989941FD6BFD60062ACDC /* JokeDto.swift in Sources */,
+				960989961FD6DC0E0062ACDC /* CategoryDto.swift in Sources */,
+				9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */,
+				9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */,
 				960989451FD5A01B0062ACDC /* AppDelegate.swift in Sources */,
 				960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */,
+				960989911FD6BD1A0062ACDC /* JokeContext.swift in Sources */,
+				9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */,
+				9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */,
 				960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */,
+				9609899D1FD6E3C80062ACDC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
