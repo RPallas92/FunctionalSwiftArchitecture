@@ -7,7 +7,20 @@
 		<key>FunctionalSwiftArchitecture.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>960989401FD5A01B0062ACDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>960989561FD5A01B0062ACDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

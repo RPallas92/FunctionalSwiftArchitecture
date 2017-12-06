@@ -22,7 +22,7 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
                 CategoryDto(name: "movie"),
                 CategoryDto(name: "food"),
                 CategoryDto(name: "celebrity"),
-            ]
+                ]
             continuation(Result.success(categories))
         }
     }
@@ -30,7 +30,8 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
 
 func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeContext, JokeDto> {
     return AsyncResult.unfold { context in
-        Future.unfold { continuation in
+        Future.unfold { completion in
+            
             let joke = JokeDto(
                 id: "ye0_hnd3rgq68e_pfvsqqg",
                 category: ["dev"],
@@ -38,7 +39,19 @@ func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeConte
                 url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
                 value: "Chuck Norris can instantiate an abstract class."
             )
-            continuation(Result.success(joke))
+            completion(Result.success(joke))
+            
+        }
+        
+    }
+}
+
+func runInBackground(_ asyncCode:@escaping (@escaping ( @escaping(() -> ())) -> ()) -> ()) {
+    DispatchQueue.global(qos: .background).async {
+        asyncCode { inMainThread in
+            DispatchQueue.main.async {
+                inMainThread()
+            }
         }
     }
 }

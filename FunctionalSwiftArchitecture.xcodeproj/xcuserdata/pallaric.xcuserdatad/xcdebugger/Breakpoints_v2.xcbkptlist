@@ -9,13 +9,187 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FunctionalSwiftArchitecture/AppDelegate.swift"
-            timestampString = "534160544.294545"
+            filePath = "FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+            timestampString = "534266437.51409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "runInBackground(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (() -&gt; ()) -&gt; () in closure #1 () -&gt; () in FunctionalSwiftArchitecture.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266437.616135"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (() -&gt; ()) -&gt; () in closure #1 () -&gt; () in FunctionalSwiftArchitectureTests.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266438.384162"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+            timestampString = "534266437.514508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "runInBackground(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FunctionalSwiftArchitecture.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266437.62914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (() -&gt; ()) -&gt; () in closure #1 () -&gt; () in FunctionalSwiftArchitecture.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266437.631034"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FunctionalSwiftArchitectureTests.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266438.386388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (() -&gt; ()) -&gt; () in closure #1 () -&gt; () in FunctionalSwiftArchitectureTests.runInBackground(((() -&gt; ()) -&gt; ()) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266438.388353"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+            timestampString = "534266437.514793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "fetchRandomJoke(forCategoryName:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 ((FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, FunctionalSwiftArchitecture.JokeDto&gt;) -&gt; ()) -&gt; () in closure #1 (FunctionalSwiftArchitecture.JokeContext) -&gt; FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, FunctionalSwiftArchitecture.JokeDto&gt;&gt; in FunctionalSwiftArchitecture.fetchRandomJoke(forCategoryName: Swift.String) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.JokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, FunctionalSwiftArchitecture.JokeDto&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266437.637679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 ((FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, FunctionalSwiftArchitectureTests.JokeDto&gt;) -&gt; ()) -&gt; () in closure #1 (FunctionalSwiftArchitectureTests.JokeContext) -&gt; FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, FunctionalSwiftArchitectureTests.JokeDto&gt;&gt; in FunctionalSwiftArchitectureTests.fetchRandomJoke(forCategoryName: Swift.String) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.JokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, FunctionalSwiftArchitectureTests.JokeDto&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/data/datasource/remote/JokesNetworkDataSource.swift"
+                  timestampString = "534266438.390646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+            timestampString = "534266437.515339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "testFetchRandomJoke()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +199,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FunctionalSwiftArchitecture/AppDelegate.swift"
-            timestampString = "534160544.2951"
+            filePath = "FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+            timestampString = "534266437.515405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testFetchRandomJoke()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FunctionalSwiftArchitectureTests.JokesNetworkDataSourceTests.testFetchRandomJoke() -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+                  timestampString = "534266438.397629"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "223">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, FunctionalSwiftArchitectureTests.JokeDto&gt;) -&gt; () in FunctionalSwiftArchitectureTests.JokesNetworkDataSourceTests.testFetchRandomJoke() -&gt; ()"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+                  timestampString = "534266438.399427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+            timestampString = "534266437.515464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testFetchRandomJoke()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/JokesNetworkDataSourceTests.swift"
+            timestampString = "534266437.515523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testFetchRandomJoke()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carthage/Checkouts/FunctionalKit/Sources/FunctionalKit/FutureType.swift"
+            timestampString = "534266437.515589"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carthage/Checkouts/FunctionalKit/Sources/FunctionalKit/FutureType.swift"
+            timestampString = "534266437.515649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "run(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carthage/Checkouts/FunctionalKit/Sources/FunctionalKit/FutureType.swift"
+            timestampString = "534266437.515704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "unfold(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carthage/Checkouts/FunctionalKit/Sources/FunctionalKit/FutureType.swift"
+            timestampString = "534266437.515761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carthage/Checkouts/FunctionalKit/Sources/FunctionalKit/FutureType.swift"
+            timestampString = "534266437.515817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
