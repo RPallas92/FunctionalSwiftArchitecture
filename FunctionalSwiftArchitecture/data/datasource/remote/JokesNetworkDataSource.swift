@@ -31,7 +31,6 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
 func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeContext, JokeDto> {
     return AsyncResult.unfold { context in
         Future.unfold { completion in
-            
             let joke = JokeDto(
                 id: "ye0_hnd3rgq68e_pfvsqqg",
                 category: ["dev"],
@@ -40,9 +39,7 @@ func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeConte
                 value: "Chuck Norris can instantiate an abstract class."
             )
             completion(Result.success(joke))
-            
         }
-        
     }
 }
 

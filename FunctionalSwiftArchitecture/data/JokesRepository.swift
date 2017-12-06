@@ -16,28 +16,52 @@ enum CachePolicy {
     case LocalFirst
 }
 
-func getCategories(withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, [CategoryDto]> {
+func getCategories(withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, [Category]> {
     switch policy {
     case .NetworkOnly:
-        return fetchAllJokeCategories()
+        return getTransformedCategories()
     case .NetworkFirst:
-        return fetchAllJokeCategories() // TODO change to conditional call
+        return getTransformedCategories() // TODO change to conditional call
     case .LocalOnly:
-        return fetchAllJokeCategories() // TODO change to local only cache call
+        return getTransformedCategories() // TODO change to local only cache call
     case .LocalFirst:
-        return fetchAllJokeCategories() // TODO change to conditional call
+        return getTransformedCategories() // TODO change to conditional call
     }
 }
 
-func getRandomJoke(forCategoryName name: String, withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, JokeDto> {
+func getRandomJoke(forCategoryName name: String, withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, Joke> {
     switch policy {
     case .NetworkOnly:
-        return fetchRandomJoke(forCategoryName: name)
+        return getTransformedRandomJoke(forCategoryName: name)
     case .NetworkFirst:
-        return fetchRandomJoke(forCategoryName: name) // TODO change to conditional call
+        return getTransformedRandomJoke(forCategoryName: name) // TODO change to conditional call
     case .LocalOnly:
-        return fetchRandomJoke(forCategoryName: name) // TODO change to local only cache call
+        return getTransformedRandomJoke(forCategoryName: name) // TODO change to local only cache call
     case .LocalFirst:
-        return fetchRandomJoke(forCategoryName: name) // TODO change to conditional call
+        return getTransformedRandomJoke(forCategoryName: name) // TODO change to conditional call
+    }
+}
+
+//TODO use Monad transoformers
+fileprivate func getTransformedCategories() -> AsyncResult<JokeContext, [Category]> {
+    return fetchAllJokeCategories().map { future in
+        future.map { result in
+            result.map { categoriesDto in
+                categoriesDto.map { categoryDto in
+                    mapToCategory(from: categoryDto)
+                }
+            }
+        }
+    }
+}
+
+//TODO use Monad transformers
+fileprivate func getTransformedRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Joke> {
+    return fetchRandomJoke(forCategoryName: categoryName).map { future in
+        future.map { result in
+            result.map { jokeDto in
+                mapToJoke(from: jokeDto)
+            }
+        }
     }
 }
