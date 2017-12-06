@@ -22,7 +22,7 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
                 CategoryDto(name: "movie"),
                 CategoryDto(name: "food"),
                 CategoryDto(name: "celebrity"),
-                ]
+            ]
             continuation(Result.success(categories))
         }
     }
@@ -43,7 +43,7 @@ func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeConte
     }
 }
 
-func runInBackground(_ asyncCode:@escaping (@escaping ( @escaping(() -> ())) -> ()) -> ()) {
+fileprivate func runInBackground(_ asyncCode:@escaping (@escaping ( @escaping(() -> ())) -> ()) -> ()) {
     DispatchQueue.global(qos: .background).async {
         asyncCode { inMainThread in
             DispatchQueue.main.async {
