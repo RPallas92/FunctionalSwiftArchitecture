@@ -32,10 +32,10 @@ extension AsyncResult where ParameterType: FutureType, ParameterType.ParameterTy
         }
     }
     
-    /*
- public func map <T> (_ transform: @escaping (ParameterType) -> T) -> Reader<EnvironmentType,T> {
- return dimap(from: { $0 }, to: transform)
- }
- */
+    static func pureT<H>(_ value:H) -> AsyncResult<EnvironmentType,H> where H == ParameterType.ParameterType.ParameterType {
+        let result = Result<JokeError, H>.pure(value)
+        let future = Future.pure(result)
+        return  AsyncResult<EnvironmentType, H>.pure(future)
+    }
     
 }

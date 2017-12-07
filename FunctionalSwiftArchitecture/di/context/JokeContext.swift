@@ -8,7 +8,7 @@
 
 class JokeContext {
     var apiUrl = "https://api.chucknorris.io/jokes/"
-    var jokesDetailaPage = JokeDetailsPage()
+    var jokesDetailPage = JokeDetailsPage()
 }
 
 class GetCategoriesContext: JokeContext {

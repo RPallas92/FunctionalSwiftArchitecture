@@ -10,9 +10,9 @@ import Foundation
 import FunctionalKit
 
 struct JokeDetailsPage {
-    func go(cateogryName: String) -> Reader<JokeContext, Void>{
-        return Reader<JokeContext, Void>.ask.map { context in
-            context
-        }
+    func go(cateogryName: String) -> Reader<GetCategoriesContext, Void>{
+        return Reader<GetCategoriesContext, Void>.ask.map { context in
+            
+        } //TODO
     }
 }
