@@ -50,8 +50,12 @@ func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeConte
     }
 }
 
+//Syntatic sugat for background execution and returining results on main thread
+//typealias thanks to @joseluisalcala
+fileprivate typealias Function = () -> ()
+fileprivate typealias Completable = (@escaping Function) -> ()
 
-fileprivate func runInBackground(_ asyncCode:@escaping (@escaping ( @escaping(() -> ())) -> ()) -> ()) {
+fileprivate func runInBackground(_ asyncCode: @escaping(@escaping Completable)->()) {
     DispatchQueue.global(qos: .background).async {
         asyncCode { inMainThread in
             DispatchQueue.main.async {
