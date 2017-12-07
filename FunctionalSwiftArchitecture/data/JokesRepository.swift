@@ -56,17 +56,12 @@ fileprivate func getTransformedCategories() -> AsyncResult<JokeContext, [Categor
 }
 
 //TODO use Monad transformers
-fileprivate func getTransformedRandomJoke(forCategoryName categoryName: String) ->
-    AsyncResult<JokeContext, Joke> {
-        return AsyncResult<JokeContext, Joke>.ask.flatMap { context in
-            return fetchRandomJoke(forCategoryName: categoryName).map { future in
-                future.map { result in
-                    result.map { jokeDto in
-                        mapToJoke(from: jokeDto)
-                    }
-                }
+fileprivate func getTransformedRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Joke> {
+    return fetchRandomJoke(forCategoryName: categoryName).map { future in
+        future.map { result in
+            result.map { jokeDto in
+                mapToJoke(from: jokeDto)
             }
         }
-        
-
+    }
 }
