@@ -41,6 +41,7 @@
 		960989AF1FD82BF30062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		96098CBC1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
 		96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
+		96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -842,6 +843,7 @@
 		96098C551FD82BF50062ACDC /* gyb.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = gyb.pyc; sourceTree = "<group>"; };
 		96098C561FD82BF50062ACDC /* SwiftCheck.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftCheck.xcarchive; sourceTree = "<group>"; };
 		96098CBB1FD845500062ACDC /* JokesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUseCases.swift; sourceTree = "<group>"; };
+		96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUseCasesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -909,6 +911,7 @@
 				9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
 				960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */,
+				96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -3030,6 +3033,7 @@
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
+				96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,

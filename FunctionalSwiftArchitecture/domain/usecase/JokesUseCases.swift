@@ -6,6 +6,12 @@
 //  Copyright © 2017 Pallas, Ricardo. All rights reserved.
 //
 
-import Foundation
+import FunctionalKit
 
+func getCategoriesUseCase() -> AsyncResult<JokeContext, [Category]> {
+    return getCategories(withPolicy: .NetworkOnly)
+}
 
+func getRandomJokeUseCase(forCategoryName name:String) -> AsyncResult<JokeContext, Joke> {
+    return getRandomJoke(forCategoryName: name, withPolicy: .NetworkOnly)
+}

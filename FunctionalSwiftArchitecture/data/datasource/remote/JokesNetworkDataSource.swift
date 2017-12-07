@@ -22,7 +22,7 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
                 CategoryDto(name: "movie"),
                 CategoryDto(name: "food"),
                 CategoryDto(name: "celebrity"),
-            ]
+                ]
             continuation(Result.success(categories))
         }
     }
@@ -31,17 +31,25 @@ func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
 func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeContext, JokeDto> {
     return AsyncResult.unfold { context in
         Future.unfold { completion in
-            let joke = JokeDto(
-                id: "ye0_hnd3rgq68e_pfvsqqg",
-                category: ["dev"],
-                iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
-                url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
-                value: "Chuck Norris can instantiate an abstract class."
-            )
-            completion(Result.success(joke))
+            
+            runInBackground { runInMainThread in
+                let joke = JokeDto(
+                    id: "ye0_hnd3rgq68e_pfvsqqg",
+                    category: ["dev"],
+                    iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                    url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
+                    value: "Chuck Norris can instantiate an abstract class."
+                )
+                
+                runInMainThread {
+                    completion(Result.success(joke))
+                }
+            }
+            
         }
     }
 }
+
 
 fileprivate func runInBackground(_ asyncCode:@escaping (@escaping ( @escaping(() -> ())) -> ()) -> ()) {
     DispatchQueue.global(qos: .background).async {

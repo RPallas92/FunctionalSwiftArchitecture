@@ -22,18 +22,15 @@ class JokesNetworkDataSourceTests: XCTestCase {
     
     func testFetchRandomJoke() {
         let expect = expectation(description: "Fetch random joke")
-
-        let jokeResult = fetchRandomJoke(forCategoryName: "dev")
         
+        let jokeResult = fetchRandomJoke(forCategoryName: "dev")
         let context = JokeContext()
-        jokeResult.run(context).run { result in
-            //XCTAssert(result.tryRight is JokeDto)
+        
+        jokeResult.runT(context, { result in
+            
             expect.fulfill()
-        }
+        })
         
         wait(for: [expect], timeout: 5.0)
     }
-    
-
-    
 }

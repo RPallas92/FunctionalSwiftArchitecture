@@ -11,4 +11,3 @@ import Foundation
 struct JokeContext {
     var apiUrl = "https://api.chucknorris.io/jokes/"
 }
-
