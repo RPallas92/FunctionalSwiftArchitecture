@@ -41,6 +41,17 @@ func drawJoke(joke: JokeViewModel) -> AsyncResult<GetRandomJokeContext, Void> {
     }
 }
 
+func displayGetCategoriesErrors(jokeError: JokeError) -> AsyncResult<GetCategoriesContext, Void> {
+    return AsyncResult<GetCategoriesContext, Void>.ask.flatMap { context -> AsyncResult<GetCategoriesContext, Void> in
+        switch(jokeError){
+        case .UnknownServerError:
+            context.view.showGenericError()
+        }
+        return AsyncResult<GetCategoriesContext, Void>.pureTT(())
+    }
+}
+
+
 
 
 func toJokeViewModel(from joke: Joke) -> JokeViewModel {
@@ -60,5 +71,8 @@ func getCategories() -> AsyncResult<GetCategoriesContext, Void> {
         .mapTT { toCategoriesViewModel(from: $0) }
         .flatMapTT { (categories) -> AsyncResult<GetCategoriesContext,Void> in
             drawCategories(categories: categories)
+        }
+        .handleErrorWith { jokeError -> AsyncResult<GetCategoriesContext,Void> in
+            displayGetCategoriesErrors(jokeError: jokeError)
         }
 }
