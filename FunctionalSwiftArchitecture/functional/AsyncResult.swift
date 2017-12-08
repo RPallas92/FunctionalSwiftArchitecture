@@ -66,31 +66,30 @@ extension AsyncResult where ParameterType: FutureType, ParameterType.ParameterTy
     }
     
     
-    /*func handleErrorWith(_ transform: @escaping (ValueType) -> Reader<EnvironmentType,Future<Result<JokeError, ValueType>>>) -> Reader<EnvironmentType,Future<Result<JokeError, ValueType>>> {
+    func handleErrorWith(_ transform: @escaping (JokeError) -> AsyncResult<EnvironmentType,ValueType>) -> AsyncResult<EnvironmentType,ValueType> {
         
-        return Reader<EnvironmentType,Future<Result<JokeError, H>>>.ask.flatMap { context -> Reader<EnvironmentType,Future<Result<JokeError, H>>> in
+        return AsyncResult<EnvironmentType,ValueType>.ask.flatMap { context -> AsyncResult<EnvironmentType,ValueType> in
             
-            self.flatMap { future -> Reader<EnvironmentType,Future<Result<JokeError, H>>> in
-                let newFuture = Future<Result<JokeError, H>>.unfold { callback -> () in
+            self.flatMap { future -> AsyncResult<EnvironmentType,ValueType> in
+                let newFuture = Future<Result<JokeError, ValueType>>.unfold { callback -> () in
                     future.run { result -> () in
                         result.fold(
                             onSuccess: { value in
-                                let newReader = transform(value)
+                                callback(Result<JokeError,ValueType>.success(value))
+                        },
+                        onFailure: { jokeError in
+                                let newReader = transform(jokeError)
                                 let newFuture = newReader.run(context)
                                 newFuture.run { newResult -> () in
                                     callback(newResult)
                                 }
-                        },
-                            onFailure: { jokeError in
-                                callback(Result<JokeError,H>.failure(jokeError))
-                        }
-                        )
+                        })
                     }
                 }
-                return Reader<EnvironmentType,Future<Result<JokeError, H>>>.pure(newFuture)
+                return AsyncResult<EnvironmentType,ValueType>.pure(newFuture)
             }
         }
         
-    }*/
+    }
     
 }
