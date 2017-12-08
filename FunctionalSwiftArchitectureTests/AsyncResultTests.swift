@@ -23,8 +23,7 @@ class AsyncResultTests: XCTestCase {
         }
         
         asyncResult3.runT(context, { result in
-            let value = result.tryRight!
-            XCTAssertEqual(value, 2)
+            XCTAssertEqual(result.tryRight, 2)
             expect.fulfill()
         })
         
@@ -32,7 +31,7 @@ class AsyncResultTests: XCTestCase {
     }
     
     func testFlatMapTTError() {
-        let expect = expectation(description: "Test flapMatTT")
+        let expect = expectation(description: "Test flapMatTT Error")
         let context = AppContext()
         let asyncResultError = AsyncResult<JokeContext, Int>.unfold { context in
             Future.unfold { continuation in
@@ -47,8 +46,31 @@ class AsyncResultTests: XCTestCase {
         }
         
         asyncResult3.runT(context, { result in
-            let error = result.tryLeft!
-            XCTAssertEqual(error, JokeError.UnknownServerError)
+            XCTAssertEqual(result.tryLeft, JokeError.UnknownServerError)
+            expect.fulfill()
+        })
+        
+        wait(for: [expect], timeout: 1.0)
+    }
+    
+    func testHandleErrorWith() {
+        let expect = expectation(description: "testHandleErrorWith")
+        let context = AppContext()
+        let asyncResultError = AsyncResult<JokeContext, Int>.unfold { context in
+            Future.unfold { continuation in
+                continuation(Result<JokeError, Int>.failure(JokeError.UnknownServerError))
+            }
+        }
+        let asyncResult2 = AsyncResult<JokeContext, Int>.pureTT(2)
+        
+        let asyncResult3 = asyncResultError.handleErrorWith { jokeError -> AsyncResult<JokeContext, Int> in
+            XCTAssertEqual(jokeError, JokeError.UnknownServerError)
+            return asyncResult2
+        }
+        
+        asyncResult3.runT(context, { result in
+            XCTAssertEqual(result.tryLeft, nil)
+            XCTAssertEqual(result.tryRight, 2)
             expect.fulfill()
         })
         
