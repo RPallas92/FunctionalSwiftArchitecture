@@ -60,17 +60,6 @@ func displayGetRandomJokeErrors(jokeError: JokeError) -> AsyncResult<GetRandomJo
         return AsyncResult<GetRandomJokeContext, Void>.pureTT(())
     }
 }
-func toJokeViewModel(from joke: Joke) -> JokeViewModel {
-    return JokeViewModel(id: joke.id, category: joke.category, iconUrl: joke.iconUrl, url: joke.url, value: joke.value)
-}
-
-func toCategoryViewModel(from category: Category) -> CategoryViewModel{
-    return CategoryViewModel(name: category.name)
-}
-
-func toCategoriesViewModel(from categories: [Category]) -> [CategoryViewModel] {
-    return categories.map(toCategoryViewModel)
-}
 
 func getCategories() -> AsyncResult<GetCategoriesContext, Void> {
     return getCategoriesUseCase(withContextType: GetCategoriesContext.self)
@@ -84,6 +73,18 @@ func getRandomJoke(categoryName: String) -> AsyncResult<GetRandomJokeContext, Vo
         .mapTT { toJokeViewModel(from: $0)}
         .flatMapTT { drawJoke(joke: $0)}
         .handleErrorWith { displayGetRandomJokeErrors(jokeError: $0) }
+}
+
+fileprivate func toJokeViewModel(from joke: Joke) -> JokeViewModel {
+    return JokeViewModel(id: joke.id, category: joke.category, iconUrl: joke.iconUrl, url: joke.url, value: joke.value)
+}
+
+fileprivate func toCategoryViewModel(from category: Category) -> CategoryViewModel{
+    return CategoryViewModel(name: category.name)
+}
+
+fileprivate func toCategoriesViewModel(from categories: [Category]) -> [CategoryViewModel] {
+    return categories.map(toCategoryViewModel)
 }
 
 
