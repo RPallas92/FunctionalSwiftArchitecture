@@ -8,8 +8,8 @@
 
 import FunctionalKit
 
-func getCategoriesUseCase() -> AsyncResult<JokeContext, [Category]> {
-    return getCategories(withPolicy: .NetworkOnly)
+func getCategoriesUseCase<Context>(withContextType: Context.Type) -> AsyncResult<Context, [Category]> where Context : JokeContext{
+    return getCategories(withPolicy: .NetworkOnly, andContextType: withContextType)
 }
 
 func getRandomJokeUseCase(forCategoryName name:String) -> AsyncResult<JokeContext, Joke> {

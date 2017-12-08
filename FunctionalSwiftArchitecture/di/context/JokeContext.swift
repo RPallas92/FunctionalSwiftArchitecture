@@ -6,17 +6,20 @@
 //  Copyright © 2017 Pallas, Ricardo. All rights reserved.
 //
 
-class JokeContext {
+protocol JokeContext {
+    
+}
+class AppContext: JokeContext {
     var apiUrl = "https://api.chucknorris.io/jokes/"
     var jokesDetailPage = JokeDetailsPage()
 }
 
-class GetCategoriesContext: JokeContext {
+class GetCategoriesContext: AppContext {
     let view: JokeCategoriesListView
     init(view: JokeCategoriesListView) { self.view = view }
 }
 
-class GetRandomJokeContext: JokeContext {
+class GetRandomJokeContext: AppContext {
     let view: JokeDetailView
     init(view: JokeDetailView) { self.view = view }
 }

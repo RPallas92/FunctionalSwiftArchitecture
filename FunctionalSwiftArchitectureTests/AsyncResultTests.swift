@@ -11,8 +11,6 @@ import FunctionalKit
 
 class AsyncResultTests: XCTestCase {
     
-
-    
     func testFlatMapTT() {
         let expect = expectation(description: "Test flapMatTT")
         let context = JokeContext()

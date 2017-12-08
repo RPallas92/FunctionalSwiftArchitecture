@@ -12,7 +12,7 @@ import FunctionalKit
 //https://api.chucknorris.io/jokes/random?category=dev
 //https://api.chucknorris.io/jokes/categories
 
-func fetchAllJokeCategories() -> AsyncResult<JokeContext, Array<CategoryDto>> {
+func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto>> where Context : JokeContext{
     return AsyncResult.unfold { (context) in
         Future.unfold { (continuation) in
             //let api = context.apiUrl, We will use context from Reader monad

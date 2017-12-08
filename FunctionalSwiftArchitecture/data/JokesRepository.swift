@@ -16,16 +16,16 @@ enum CachePolicy {
     case LocalFirst
 }
 
-func getCategories(withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, [Category]> {
+func getCategories<Context>(withPolicy policy: CachePolicy, andContextType: Context.Type) -> AsyncResult<Context, [Category]> where Context : JokeContext {
     switch policy {
     case .NetworkOnly:
-        return getTransformedCategories()
+        return getTransformedCategories(withContextType: andContextType)
     case .NetworkFirst:
-        return getTransformedCategories() // TODO change to conditional call
+        return getTransformedCategories(withContextType: andContextType) // TODO change to conditional call
     case .LocalOnly:
-        return getTransformedCategories() // TODO change to local only cache call
+        return getTransformedCategories(withContextType: andContextType) // TODO change to local only cache call
     case .LocalFirst:
-        return getTransformedCategories() // TODO change to conditional call
+        return getTransformedCategories(withContextType: andContextType) // TODO change to conditional call
     }
 }
 
@@ -43,7 +43,7 @@ func getRandomJoke(forCategoryName name: String, withPolicy policy: CachePolicy)
 }
 
 //TODO use Monad transoformers
-fileprivate func getTransformedCategories() -> AsyncResult<JokeContext, [Category]> {
+fileprivate func getTransformedCategories<Context>(withContextType: Context.Type) -> AsyncResult<Context, [Category]> where Context : JokeContext {
     return fetchAllJokeCategories().map { future in
         future.map { result in
             result.map { categoriesDto in

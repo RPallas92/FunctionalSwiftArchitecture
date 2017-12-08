@@ -55,8 +55,10 @@ func toCategoriesViewModel(from categories: [Category]) -> [CategoryViewModel] {
     return categories.map(toCategoryViewModel)
 }
 
-/*func getCategories() -> AsyncResult<GetCategoriesContext, Void> {
-    getCategoriesUseCase()
+func getCategories() -> AsyncResult<GetCategoriesContext, Void> {
+    return getCategoriesUseCase(withContextType: GetCategoriesContext.self)
         .mapTT { toCategoriesViewModel(from: $0) }
-        //.flatMap { drawCategories(categories: $0) }
-}*/
+        .flatMapTT { (categories) -> Reader<GetCategoriesContext, Future<Result<JokeError, Void>>> in
+            drawCategories(categories: categories)
+        }
+}
