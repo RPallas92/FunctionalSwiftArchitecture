@@ -51,9 +51,6 @@ func displayGetCategoriesErrors(jokeError: JokeError) -> AsyncResult<GetCategori
     }
 }
 
-
-
-
 func toJokeViewModel(from joke: Joke) -> JokeViewModel {
     return JokeViewModel(id: joke.id, category: joke.category, iconUrl: joke.iconUrl, url: joke.url, value: joke.value)
 }
@@ -69,10 +66,6 @@ func toCategoriesViewModel(from categories: [Category]) -> [CategoryViewModel] {
 func getCategories() -> AsyncResult<GetCategoriesContext, Void> {
     return getCategoriesUseCase(withContextType: GetCategoriesContext.self)
         .mapTT { toCategoriesViewModel(from: $0) }
-        .flatMapTT { (categories) -> AsyncResult<GetCategoriesContext,Void> in
-            drawCategories(categories: categories)
-        }
-        .handleErrorWith { jokeError -> AsyncResult<GetCategoriesContext,Void> in
-            displayGetCategoriesErrors(jokeError: jokeError)
-        }
+        .flatMapTT { drawCategories(categories: $0)}
+        .handleErrorWith { displayGetCategoriesErrors(jokeError: $0)}
 }
