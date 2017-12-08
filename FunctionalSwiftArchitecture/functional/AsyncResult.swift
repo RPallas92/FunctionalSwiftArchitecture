@@ -32,7 +32,33 @@ extension AsyncResult where ParameterType: FutureType, ParameterType.ParameterTy
         }
     }
     
-    static func pureT<H>(_ value:H) -> AsyncResult<EnvironmentType,H> where H == ParameterType.ParameterType.ParameterType {
+    func flatMapTT<H>(_ transform: @escaping (ParameterType.ParameterType.ParameterType) -> Reader<EnvironmentType,Future<Result<JokeError, H>>>) -> Reader<EnvironmentType,Future<Result<JokeError, H>>> {
+        
+        return Reader<EnvironmentType,Future<Result<JokeError, H>>>.ask.flatMap { context -> Reader<EnvironmentType,Future<Result<JokeError, H>>> in
+            
+            self.flatMap { future -> Reader<EnvironmentType,Future<Result<JokeError, H>>> in
+                let newFuture = Future<Result<JokeError, H>>.unfold { callback -> () in
+                    future.run { result -> () in
+                        result.fold(
+                            onSuccess: { value in
+                                let newReader = transform(value)
+                                let newFuture = newReader.run(context)
+                                newFuture.run { newResult -> () in
+                                    callback(newResult)
+                                }
+                            },
+                            onFailure: { jokeError in
+                                callback(Result<JokeError,H>.failure(jokeError))
+                            }
+                        )
+                    }
+                }
+                return Reader<EnvironmentType,Future<Result<JokeError, H>>>.pure(newFuture)
+            }
+        }
+    }
+    
+    static func pureTT<H>(_ value:H) -> AsyncResult<EnvironmentType,H> where H == ParameterType.ParameterType.ParameterType {
         let result = Result<JokeError, H>.pure(value)
         let future = Future.pure(result)
         return  AsyncResult<EnvironmentType, H>.pure(future)

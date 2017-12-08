@@ -50,6 +50,7 @@
 		96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CCD1FD94DCD0062ACDC /* JokeViewModel.swift */; };
 		96098CD11FD94DD60062ACDC /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */; };
 		96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */; };
+		96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -856,6 +857,7 @@
 		96098CC91FD94D300062ACDC /* JokesPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresentation.swift; sourceTree = "<group>"; };
 		96098CCD1FD94DCD0062ACDC /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResultTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -924,6 +926,7 @@
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
 				960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */,
 				96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */,
+				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -3061,6 +3064,7 @@
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
+				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,

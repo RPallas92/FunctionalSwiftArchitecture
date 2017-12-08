@@ -45,7 +45,6 @@ func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeConte
                     completion(Result.success(joke))
                 }
             }
-            
         }
     }
 }
