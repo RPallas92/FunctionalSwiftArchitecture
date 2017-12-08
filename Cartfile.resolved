@@ -1,3 +1,4 @@
-github "facile-it/FunctionalKit" "66507a791aad447de4bfecc9eb66f0278dae351b"
+github "SwiftKit/Cuckoo" "0.10.2"
+github "facile-it/FunctionalKit" "b54351a7465a7eb95973b1c5d8dcbd4be9ccf88c"
 github "typelift/Abstract" "ead45c334093a0bde679d21d3a08eefb20094f1d"
 github "typelift/SwiftCheck" "d7a794b14f26ccebc0b396e1cc6bd6698b62d3ce"

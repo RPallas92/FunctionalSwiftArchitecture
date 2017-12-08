@@ -52,6 +52,9 @@
 		96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */; };
 		96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */; };
 		961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82561FDABE72003CB298 /* JokesPresentationTests.swift */; };
+		961C827E1FDADBC6003CB298 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; };
+		961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */; };
+		961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,6 +283,20 @@
 			remoteInfo = "SwiftCheck-tvOSTests";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		961C82811FDAE505003CB298 /* Copy Files - Carthage - Tests */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */,
+			);
+			name = "Copy Files - Carthage - Tests";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		960989411FD5A01B0062ACDC /* FunctionalSwiftArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalSwiftArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -860,6 +877,8 @@
 		96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResultTests.swift; sourceTree = "<group>"; };
 		961C82561FDABE72003CB298 /* JokesPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresentationTests.swift; sourceTree = "<group>"; };
+		961C827D1FDADBC6003CB298 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
+		961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -878,6 +897,7 @@
 			files = (
 				960989AE1FD82BF30062ACDC /* Abstract.framework in Frameworks */,
 				960989AF1FD82BF30062ACDC /* FunctionalKit.framework in Frameworks */,
+				961C827E1FDADBC6003CB298 /* Cuckoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +944,7 @@
 		9609895A1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
+				961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */,
 				9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
 				960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */,
@@ -937,6 +958,7 @@
 		9609896B1FD5B5450062ACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				961C827D1FDADBC6003CB298 /* Cuckoo.framework */,
 				960989B01FD82BF40062ACDC /* Carthage */,
 				9609896C1FD5B5450062ACDC /* Abstract.framework */,
 				9609896D1FD5B5460062ACDC /* FunctionalKit.framework */,
@@ -2670,7 +2692,7 @@
 				9609893D1FD5A01B0062ACDC /* Sources */,
 				9609893E1FD5A01B0062ACDC /* Frameworks */,
 				9609893F1FD5A01B0062ACDC /* Resources */,
-				960989721FD5B5550062ACDC /* ShellScript */,
+				960989721FD5B5550062ACDC /* Run Script - Carthage */,
 			);
 			buildRules = (
 			);
@@ -2688,6 +2710,8 @@
 				960989531FD5A01B0062ACDC /* Sources */,
 				960989541FD5A01B0062ACDC /* Frameworks */,
 				960989551FD5A01B0062ACDC /* Resources */,
+				961C827C1FDAD718003CB298 /* Run Script - Cuckoo */,
+				961C82811FDAE505003CB298 /* Copy Files - Carthage - Tests */,
 			);
 			buildRules = (
 			);
@@ -3010,7 +3034,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		960989721FD5B5550062ACDC /* ShellScript */ = {
+		960989721FD5B5550062ACDC /* Run Script - Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3019,6 +3043,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
 			);
+			name = "Run Script - Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
@@ -3026,6 +3051,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		961C827C1FDAD718003CB298 /* Run Script - Cuckoo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Cuckoo";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/FunctionalSwiftArchitectureTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR/FunctionalSwiftArchitecture\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/presentation/JokesPresentation.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3066,6 +3105,7 @@
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
+				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
 				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
