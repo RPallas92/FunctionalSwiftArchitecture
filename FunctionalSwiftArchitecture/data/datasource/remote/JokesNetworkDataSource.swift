@@ -28,7 +28,7 @@ func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto
     }
 }
 
-func fetchRandomJoke(forCategoryName cateogory: String) -> AsyncResult<JokeContext, JokeDto> {
+func fetchRandomJoke<Context>(forCategoryName cateogory: String) -> AsyncResult<Context, JokeDto> where Context : JokeContext {
     return AsyncResult.unfold { context in
         Future.unfold { completion in
             

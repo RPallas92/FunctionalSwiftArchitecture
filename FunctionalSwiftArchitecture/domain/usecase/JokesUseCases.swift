@@ -12,6 +12,6 @@ func getCategoriesUseCase<Context>(withContextType: Context.Type) -> AsyncResult
     return getCategories(withPolicy: .NetworkOnly, andContextType: withContextType)
 }
 
-func getRandomJokeUseCase(forCategoryName name:String) -> AsyncResult<JokeContext, Joke> {
-    return getRandomJoke(forCategoryName: name, withPolicy: .NetworkOnly)
+func getRandomJokeUseCase<Context>(forCategoryName name:String, withContextType: Context.Type) -> AsyncResult<Context, Joke> where Context: JokeContext {
+    return getRandomJoke(forCategoryName: name, withPolicy: .NetworkOnly, andContextType: withContextType)
 }

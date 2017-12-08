@@ -29,16 +29,16 @@ func getCategories<Context>(withPolicy policy: CachePolicy, andContextType: Cont
     }
 }
 
-func getRandomJoke(forCategoryName name: String, withPolicy policy: CachePolicy) -> AsyncResult<JokeContext, Joke> {
+func getRandomJoke<Context>(forCategoryName name: String, withPolicy policy: CachePolicy, andContextType: Context.Type) -> AsyncResult<Context, Joke> where Context : JokeContext{
     switch policy {
     case .NetworkOnly:
-        return getTransformedRandomJoke(forCategoryName: name)
+        return getTransformedRandomJoke(forCategoryName: name, withContextType: andContextType)
     case .NetworkFirst:
-        return getTransformedRandomJoke(forCategoryName: name) // TODO change to conditional call
+        return getTransformedRandomJoke(forCategoryName: name, withContextType: andContextType) // TODO change to conditional call
     case .LocalOnly:
-        return getTransformedRandomJoke(forCategoryName: name) // TODO change to local only cache call
+        return getTransformedRandomJoke(forCategoryName: name, withContextType: andContextType) // TODO change to local only cache call
     case .LocalFirst:
-        return getTransformedRandomJoke(forCategoryName: name) // TODO change to conditional call
+        return getTransformedRandomJoke(forCategoryName: name, withContextType: andContextType) // TODO change to conditional call
     }
 }
 
@@ -56,7 +56,7 @@ fileprivate func getTransformedCategories<Context>(withContextType: Context.Type
 }
 
 //TODO use Monad transformers
-fileprivate func getTransformedRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Joke> {
+fileprivate func getTransformedRandomJoke<Context>(forCategoryName categoryName: String, withContextType: Context.Type) -> AsyncResult<Context, Joke> where Context: JokeContext{
     return fetchRandomJoke(forCategoryName: categoryName).map { future in
         future.map { result in
             result.map { jokeDto in
