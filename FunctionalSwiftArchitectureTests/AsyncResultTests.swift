@@ -13,7 +13,7 @@ class AsyncResultTests: XCTestCase {
     
     func testFlatMapTT() {
         let expect = expectation(description: "Test flapMatTT")
-        let context = JokeContext()
+        let context = AppContext()
         let asyncResult = AsyncResult<JokeContext, Int>.pureTT(1)
         let asyncResult2 = AsyncResult<JokeContext, Int>.pureTT(2)
         
@@ -31,10 +31,9 @@ class AsyncResultTests: XCTestCase {
         wait(for: [expect], timeout: 1.0)
     }
     
-    
     func testFlatMapTTError() {
         let expect = expectation(description: "Test flapMatTT")
-        let context = JokeContext()
+        let context = AppContext()
         let asyncResultError = AsyncResult<JokeContext, Int>.unfold { context in
             Future.unfold { continuation in
                 continuation(Result<JokeError, Int>.failure(JokeError.UnknownServerError))

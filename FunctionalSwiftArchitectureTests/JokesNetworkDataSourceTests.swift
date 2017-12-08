@@ -24,7 +24,7 @@ class JokesNetworkDataSourceTests: XCTestCase {
         let expect = expectation(description: "Fetch random joke")
         
         let jokeResult = fetchRandomJoke(forCategoryName: "dev")
-        let context = JokeContext()
+        let context = AppContext()
         
         jokeResult.runT(context, { result in
             
