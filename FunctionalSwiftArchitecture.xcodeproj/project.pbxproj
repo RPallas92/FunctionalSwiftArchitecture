@@ -11,7 +11,6 @@
 		9609894C1FD5A01B0062ACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894A1FD5A01B0062ACDC /* Main.storyboard */; };
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
-		9609895C1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */; };
 		9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896C1FD5B5450062ACDC /* Abstract.framework */; };
 		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* DetailViewController.swift */; };
@@ -41,7 +40,6 @@
 		960989AF1FD82BF30062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		96098CBC1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
 		96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
-		96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */; };
 		96098CC71FD94A080062ACDC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC61FD94A080062ACDC /* Navigation.swift */; };
 		96098CC81FD94A080062ACDC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC61FD94A080062ACDC /* Navigation.swift */; };
 		96098CCA1FD94D300062ACDC /* JokesPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC91FD94D300062ACDC /* JokesPresentation.swift */; };
@@ -308,7 +306,6 @@
 		960989501FD5A01B0062ACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		960989521FD5A01B0062ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960989571FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionalSwiftArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalSwiftArchitectureTests.swift; sourceTree = "<group>"; };
 		9609895D1FD5A01B0062ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9609896C1FD5B5450062ACDC /* Abstract.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Abstract.framework; path = Carthage/Build/iOS/Abstract.framework; sourceTree = "<group>"; };
 		9609896D1FD5B5460062ACDC /* FunctionalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FunctionalKit.framework; path = Carthage/Build/iOS/FunctionalKit.framework; sourceTree = "<group>"; };
@@ -872,7 +869,6 @@
 		96098C551FD82BF50062ACDC /* gyb.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = gyb.pyc; sourceTree = "<group>"; };
 		96098C561FD82BF50062ACDC /* SwiftCheck.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftCheck.xcarchive; sourceTree = "<group>"; };
 		96098CBB1FD845500062ACDC /* JokesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUseCases.swift; sourceTree = "<group>"; };
-		96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUseCasesTests.swift; sourceTree = "<group>"; };
 		96098CC61FD94A080062ACDC /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		96098CC91FD94D300062ACDC /* JokesPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresentation.swift; sourceTree = "<group>"; };
 		96098CCD1FD94DCD0062ACDC /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
@@ -948,12 +944,10 @@
 			isa = PBXGroup;
 			children = (
 				961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */,
-				9609895B1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift */,
-				9609895D1FD5A01B0062ACDC /* Info.plist */,
 				960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */,
-				96098CBE1FD84A050062ACDC /* JokesUseCasesTests.swift */,
 				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
+				9609895D1FD5A01B0062ACDC /* Info.plist */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -3115,14 +3109,12 @@
 				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */,
-				96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
 				96098CCB1FD94D300062ACDC /* JokesPresentation.swift in Sources */,
 				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				96098CC81FD94A080062ACDC /* Navigation.swift in Sources */,
-				9609895C1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
 			);
