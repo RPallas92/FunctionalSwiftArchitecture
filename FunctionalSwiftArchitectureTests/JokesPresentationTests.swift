@@ -12,8 +12,6 @@ import Cuckoo
 
 class JokesPresentationTests: XCTestCase {
     
-    //TODO test also error cases
-    
     let categoriesMatcher = ParameterMatcher { (categories: [CategoryViewModel]) -> Bool in
         let expectedCategories = [
             CategoryViewModel(name: "explicit"),
