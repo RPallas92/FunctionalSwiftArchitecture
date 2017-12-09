@@ -23,7 +23,7 @@ class JokesNetworkDataSourceTests: XCTestCase {
     func testFetchRandomJoke() {
         let expect = expectation(description: "Fetch random joke")
         
-        let jokeResult:AsyncResult<AppContext, JokeDto> = fetchRandomJoke(forCategoryName: "dev")
+        let jokeResult:AsyncResult<AppContext, JokeDto> = JokesNetworkDataSource().fetchRandomJoke(forCategoryName: "dev")
         let context = AppContext()
         
         jokeResult.runT(context, { result in
