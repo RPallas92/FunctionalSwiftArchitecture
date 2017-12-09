@@ -12,42 +12,44 @@ import FunctionalKit
 //https://api.chucknorris.io/jokes/random?category=dev
 //https://api.chucknorris.io/jokes/categories
 
-func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto>> where Context : JokeContext{
-    return AsyncResult.unfold { (context) in
-        Future.unfold { (continuation) in
-            //let api = context.apiUrl, We will use context from Reader monad
-            let categories = [
-                CategoryDto(name: "explicit"),
-                CategoryDto(name: "dev"),
-                CategoryDto(name: "movie"),
-                CategoryDto(name: "food"),
-                CategoryDto(name: "celebrity"),
-                ]
-            continuation(Result.success(categories))
+struct JokesNetworkDataSource : JokesDataSource {
+    func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto>> where Context : JokeContext{
+        return AsyncResult.unfold { (context) in
+            Future.unfold { (continuation) in
+                //let api = context.apiUrl, We will use context from Reader monad
+                let categories = [
+                    CategoryDto(name: "explicit"),
+                    CategoryDto(name: "dev"),
+                    CategoryDto(name: "movie"),
+                    CategoryDto(name: "food"),
+                    CategoryDto(name: "celebrity"),
+                    ]
+                continuation(Result.success(categories))
+            }
         }
     }
-}
-
-func fetchRandomJoke<Context>(forCategoryName cateogory: String) -> AsyncResult<Context, JokeDto> where Context : JokeContext {
-    return AsyncResult.unfold { context in
-        Future.unfold { completion in
-            
-            runInBackground { runInMainThread in
-                let joke = JokeDto(
-                    id: "ye0_hnd3rgq68e_pfvsqqg",
-                    category: ["dev"],
-                    iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
-                    url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
-                    value: "Chuck Norris can instantiate an abstract class."
-                )
-                
-                runInMainThread {
-                    completion(Result.success(joke))
+    
+    func fetchRandomJoke<Context>(forCategoryName cateogory: String) -> AsyncResult<Context, JokeDto> where Context : JokeContext {
+        return AsyncResult.unfold { context in
+            Future.unfold { completion in
+                runInBackground { runInMainThread in
+                    let joke = JokeDto(
+                        id: "ye0_hnd3rgq68e_pfvsqqg",
+                        category: ["dev"],
+                        iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                        url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
+                        value: "Chuck Norris can instantiate an abstract class."
+                    )
+                    
+                    runInMainThread {
+                        completion(Result.success(joke))
+                    }
                 }
             }
         }
     }
 }
+
 
 //Syntatic sugat for background execution and returining results on main thread
 //typealias thanks to @joseluisalcala

@@ -55,6 +55,8 @@
 		961C827E1FDADBC6003CB298 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; };
 		961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */; };
 		961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
+		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -879,6 +881,7 @@
 		961C82561FDABE72003CB298 /* JokesPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresentationTests.swift; sourceTree = "<group>"; };
 		961C827D1FDADBC6003CB298 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		961C82861FDC2582003CB298 /* JokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1008,6 +1011,7 @@
 			isa = PBXGroup;
 			children = (
 				960989851FD6B7110062ACDC /* remote */,
+				961C82861FDC2582003CB298 /* JokesDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -3085,6 +3089,7 @@
 				96098CBC1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				960989911FD6BD1A0062ACDC /* JokeContext.swift in Sources */,
 				96098CCA1FD94D300062ACDC /* JokesPresentation.swift in Sources */,
+				961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */,
 				9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */,
 				96098CC71FD94A080062ACDC /* Navigation.swift in Sources */,
@@ -3113,6 +3118,7 @@
 				96098CC01FD84A050062ACDC /* JokesUseCasesTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
 				96098CCB1FD94D300062ACDC /* JokesPresentation.swift in Sources */,
+				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				96098CC81FD94A080062ACDC /* Navigation.swift in Sources */,

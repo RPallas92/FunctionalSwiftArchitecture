@@ -42,26 +42,18 @@ func getRandomJoke<Context>(forCategoryName name: String, withPolicy policy: Cac
     }
 }
 
-//TODO use Monad transoformers
 fileprivate func getTransformedCategories<Context>(withContextType: Context.Type) -> AsyncResult<Context, [Category]> where Context : JokeContext {
-    return fetchAllJokeCategories().map { future in
-        future.map { result in
-            result.map { categoriesDto in
-                categoriesDto.map { categoryDto in
-                    mapToCategory(from: categoryDto)
-                }
-            }
+    return AsyncResult<Context, [Category]>.ask.flatMap { context in
+        context.jokesDataSource.fetchAllJokeCategories().mapTT { categories in
+            categories.map(mapToCategory)
         }
     }
 }
 
-//TODO use Monad transformers
 fileprivate func getTransformedRandomJoke<Context>(forCategoryName categoryName: String, withContextType: Context.Type) -> AsyncResult<Context, Joke> where Context: JokeContext{
-    return fetchRandomJoke(forCategoryName: categoryName).map { future in
-        future.map { result in
-            result.map { jokeDto in
-                mapToJoke(from: jokeDto)
-            }
+    return AsyncResult<Context, [Category]>.ask.flatMap { context in
+        context.jokesDataSource.fetchRandomJoke(forCategoryName: categoryName).mapTT { jokeDto in
+            mapToJoke(from: jokeDto)
         }
     }
 }
