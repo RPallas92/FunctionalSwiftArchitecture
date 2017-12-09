@@ -12,6 +12,8 @@ import Cuckoo
 
 class JokesPresentationTests: XCTestCase {
     
+    //TODO test also error cases
+    
     let categoriesMatcher = ParameterMatcher { (categories: [CategoryViewModel]) -> Bool in
         let expectedCategories = [
             CategoryViewModel(name: "explicit"),
@@ -21,6 +23,17 @@ class JokesPresentationTests: XCTestCase {
             CategoryViewModel(name: "celebrity"),
             ]
         return CategoryViewModel.containSameElements(lhs: categories, rhs: expectedCategories)
+    }
+    
+    let jokeMatcher = ParameterMatcher { (joke: JokeViewModel) -> Bool in
+        let expectedJoke = JokeViewModel(
+            id: "ye0_hnd3rgq68e_pfvsqqg",
+            category: ["dev"],
+            iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+            url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
+            value: "Chuck Norris can instantiate an abstract class."
+        )
+        return joke == expectedJoke
     }
     
     /*
@@ -49,6 +62,25 @@ class JokesPresentationTests: XCTestCase {
         wait(for: [expect], timeout: 1.0)
     }
     
- 
-    
+    func testGetRandomJoke(){
+        let expect = expectation(description: "testGetRandomJoke")
+        
+        let jokeDetailView = MockJokeDetailView()
+        stub(jokeDetailView) { stub in
+            when(stub.drawJoke(joke: jokeMatcher)).thenDoNothing()
+        }
+        
+        let context = GetRandomJokeContext(view: jokeDetailView)
+        let jokeAsyncResult = getRandomJoke(categoryName: "dev")
+        
+        //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
+        verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
+        
+        jokeAsyncResult.runT(context, { result in
+            //Verify it was called with correct joke.
+            verify(jokeDetailView).drawJoke(joke: self.jokeMatcher)
+            expect.fulfill()
+        })
+        wait(for: [expect], timeout: 1.0)
+    }
 }

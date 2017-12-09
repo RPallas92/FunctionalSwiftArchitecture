@@ -15,3 +15,9 @@ struct JokeViewModel {
     var url: String
     var value: String
 }
+
+extension JokeViewModel : Equatable {
+    static func ==(lhs: JokeViewModel, rhs: JokeViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
