@@ -105,7 +105,7 @@ class JokesPresentationTests: XCTestCase {
         categoriesAsyncResult.runT(context, { result in
             //Verify it was not called
             verify(categoriesListView, never()).drawCategories(categories: self.categoriesMatcher)
-            //Verify it was called
+            //Verify it was called once
             verify(categoriesListView).showGenericError()
             expect.fulfill()
         })
@@ -156,7 +156,7 @@ class JokesPresentationTests: XCTestCase {
         jokeAsyncResult.runT(context, { result in
             //Verify it was not called
             verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
-            //Verify it was called
+            //Verify it was called once
             verify(jokeDetailView).showGenericError()
             
             expect.fulfill()
