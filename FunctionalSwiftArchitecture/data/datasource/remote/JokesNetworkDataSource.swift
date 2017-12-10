@@ -9,9 +9,6 @@
 import Foundation
 import FunctionalKit
 
-//https://api.chucknorris.io/jokes/random?category=dev
-//https://api.chucknorris.io/jokes/categories
-
 struct JokesNetworkDataSource : JokesDataSource {
     func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto>> where Context : JokeContext{
         return AsyncResult.unfold { (context) in
@@ -50,8 +47,7 @@ struct JokesNetworkDataSource : JokesDataSource {
     }
 }
 
-
-//Syntatic sugat for background execution and returining results on main thread
+//Syntatic sugar for background execution and returining results on main thread
 //typealias thanks to @joseluisalcala
 fileprivate typealias Function = () -> ()
 fileprivate typealias Completable = (@escaping Function) -> ()

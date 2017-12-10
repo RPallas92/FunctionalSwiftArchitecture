@@ -56,6 +56,8 @@
 		961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82AF1FDD90C6003CB298 /* Moya.framework */; };
+		961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
+		961C82E11FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -880,6 +882,7 @@
 		961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		961C82861FDC2582003CB298 /* JokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDataSource.swift; sourceTree = "<group>"; };
 		961C82AF1FDD90C6003CB298 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		961C82DF1FDD9428003CB298 /* JokesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,6 +984,7 @@
 		9609897F1FD6B6D10062ACDC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				961C82BF1FDD93DB003CB298 /* restApi */,
 				960989921FD6BFBC0062ACDC /* datamodel */,
 				960989841FD6B7110062ACDC /* datasource */,
 				9609899E1FD6E4190062ACDC /* JokesRepository.swift */,
@@ -2684,6 +2688,14 @@
 			path = viewmodel;
 			sourceTree = "<group>";
 		};
+		961C82BF1FDD93DB003CB298 /* restApi */ = {
+			isa = PBXGroup;
+			children = (
+				961C82DF1FDD9428003CB298 /* JokesApi.swift */,
+			);
+			path = restApi;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3080,6 +3092,7 @@
 				9609899B1FD6E36C0062ACDC /* Joke.swift in Sources */,
 				960989991FD6E3240062ACDC /* DataMappers.swift in Sources */,
 				960989941FD6BFD60062ACDC /* JokeDto.swift in Sources */,
+				961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */,
 				960989961FD6DC0E0062ACDC /* CategoryDto.swift in Sources */,
 				9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */,
 				9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */,
@@ -3123,6 +3136,7 @@
 				96098CC81FD94A080062ACDC /* Navigation.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
+				961C82E11FDD9428003CB298 /* JokesApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
