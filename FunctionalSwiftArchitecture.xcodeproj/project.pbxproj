@@ -57,7 +57,9 @@
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82AF1FDD90C6003CB298 /* Moya.framework */; };
 		961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
-		961C82E11FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
+		961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */; };
+		961C82E71FDDA092003CB298 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82E61FDDA092003CB298 /* Alamofire.framework */; };
+		961C82E91FDDA0D5003CB298 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82E81FDDA0D4003CB298 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -883,6 +885,9 @@
 		961C82861FDC2582003CB298 /* JokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDataSource.swift; sourceTree = "<group>"; };
 		961C82AF1FDD90C6003CB298 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		961C82DF1FDD9428003CB298 /* JokesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApi.swift; sourceTree = "<group>"; };
+		961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesInMemoryDataSource.swift; sourceTree = "<group>"; };
+		961C82E61FDDA092003CB298 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		961C82E81FDDA0D4003CB298 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -893,6 +898,8 @@
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
 				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
 				961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */,
+				961C82E71FDDA092003CB298 /* Alamofire.framework in Frameworks */,
+				961C82E91FDDA0D5003CB298 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +961,7 @@
 				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
+				961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -961,6 +969,8 @@
 		9609896B1FD5B5450062ACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				961C82E81FDDA0D4003CB298 /* Result.framework */,
+				961C82E61FDDA092003CB298 /* Alamofire.framework */,
 				961C82AF1FDD90C6003CB298 /* Moya.framework */,
 				961C827D1FDADBC6003CB298 /* Cuckoo.framework */,
 				960989B01FD82BF40062ACDC /* Carthage */,
@@ -3057,12 +3067,16 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3123,6 +3137,7 @@
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
+				961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */,
 				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
 				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
@@ -3136,7 +3151,6 @@
 				96098CC81FD94A080062ACDC /* Navigation.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
-				961C82E11FDD9428003CB298 /* JokesApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

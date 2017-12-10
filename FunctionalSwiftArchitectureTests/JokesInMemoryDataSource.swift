@@ -9,7 +9,7 @@
 import Foundation
 import FunctionalKit
 
-struct JokesNetworkDataSource : JokesDataSource {
+struct JokesInMemoryDataSource : JokesDataSource {
     func fetchAllJokeCategories<Context>() -> AsyncResult<Context, Array<CategoryDto>> where Context : JokeContext{
         return AsyncResult.unfold { (context) in
             Future.unfold { (continuation) in
@@ -21,7 +21,6 @@ struct JokesNetworkDataSource : JokesDataSource {
                     CategoryDto(name: "food"),
                     CategoryDto(name: "celebrity"),
                     ]
-                
                 continuation(Result.success(categories))
             }
         }
@@ -62,3 +61,4 @@ fileprivate func runInBackground(_ asyncCode: @escaping(@escaping Completable)->
         }
     }
 }
+

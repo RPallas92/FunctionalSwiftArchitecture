@@ -64,6 +64,8 @@ class JokesPresentationTests: XCTestCase {
         }
         
         let context = GetCategoriesContext(view: categoriesListView)
+        context.jokesDataSource = JokesInMemoryDataSource()
+
         let categoriesAsyncResult = getCategories()
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
@@ -120,6 +122,8 @@ class JokesPresentationTests: XCTestCase {
         }
         
         let context = GetRandomJokeContext(view: jokeDetailView)
+        context.jokesDataSource = JokesInMemoryDataSource()
+
         let jokeAsyncResult = getRandomJoke(categoryName: "dev")
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
