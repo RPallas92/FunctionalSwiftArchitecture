@@ -55,6 +55,7 @@
 		961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
+		961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82AF1FDD90C6003CB298 /* Moya.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -878,6 +879,7 @@
 		961C827D1FDADBC6003CB298 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		961C82861FDC2582003CB298 /* JokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDataSource.swift; sourceTree = "<group>"; };
+		961C82AF1FDD90C6003CB298 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -887,6 +889,7 @@
 			files = (
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
 				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
+				961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +958,7 @@
 		9609896B1FD5B5450062ACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				961C82AF1FDD90C6003CB298 /* Moya.framework */,
 				961C827D1FDADBC6003CB298 /* Cuckoo.framework */,
 				960989B01FD82BF40062ACDC /* Carthage */,
 				9609896C1FD5B5450062ACDC /* Abstract.framework */,
@@ -3040,11 +3044,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
