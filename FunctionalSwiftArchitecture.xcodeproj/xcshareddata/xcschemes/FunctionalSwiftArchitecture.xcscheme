@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "960989561FD5A01B0062ACDC"
+               BuildableName = "FunctionalSwiftArchitectureTests.xctest"
+               BlueprintName = "FunctionalSwiftArchitectureTests"
+               ReferencedContainer = "container:FunctionalSwiftArchitecture.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
