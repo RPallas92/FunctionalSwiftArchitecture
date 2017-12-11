@@ -18,6 +18,8 @@ class JokesApiTests: XCTestCase {
         let context = AppContext()
         
         categoriesResult.runT(context, { result in
+            XCTAssertNotNil(result.tryRight)
+            XCTAssertNil(result.tryLeft)
             expect.fulfill()
         })
         
@@ -32,6 +34,8 @@ class JokesApiTests: XCTestCase {
         let context = AppContext()
         
         jokeResult.runT(context, { result in
+            XCTAssertNotNil(result.tryRight)
+            XCTAssertNil(result.tryLeft)
             expect.fulfill()
         })
         
