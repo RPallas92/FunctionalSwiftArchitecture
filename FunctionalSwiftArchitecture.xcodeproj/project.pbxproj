@@ -11,7 +11,6 @@
 		9609894C1FD5A01B0062ACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894A1FD5A01B0062ACDC /* Main.storyboard */; };
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
-		9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896C1FD5B5450062ACDC /* Abstract.framework */; };
 		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* DetailViewController.swift */; };
 		960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897C1FD6B6D10062ACDC /* MasterViewController.swift */; };
@@ -55,11 +54,8 @@
 		961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
-		961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82AF1FDD90C6003CB298 /* Moya.framework */; };
 		961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 		961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */; };
-		961C82E71FDDA092003CB298 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82E61FDDA092003CB298 /* Alamofire.framework */; };
-		961C82E91FDDA0D5003CB298 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C82E81FDDA0D4003CB298 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -896,10 +892,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
-				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
-				961C82B01FDD90C6003CB298 /* Moya.framework in Frameworks */,
-				961C82E71FDDA092003CB298 /* Alamofire.framework in Frameworks */,
-				961C82E91FDDA0D5003CB298 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3064,19 +3056,11 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

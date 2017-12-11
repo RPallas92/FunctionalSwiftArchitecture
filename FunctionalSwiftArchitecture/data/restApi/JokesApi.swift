@@ -20,7 +20,7 @@ enum JokesApi {
     case fetchRandomJoke(forCategoryName: String)
 }
 
-extension JokesApi: TargetType {
+extension JokesApi {
     var baseURL: URL { return URL(string: "https://api.chucknorris.io")! }
     
     

@@ -1,6 +1,9 @@
 import XCTest
 import Abstract
 @testable import FunctionalKit
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 class ReaderTests: XCTestCase {
     
@@ -47,7 +50,7 @@ class ReaderTests: XCTestCase {
                 fulfill()
                 return environment
             }
-            r.run(Environment(environment: "Test"))
+			r.run(Environment(environment: "Test")) ==! Environment(environment: "Test")
         }
     }
     

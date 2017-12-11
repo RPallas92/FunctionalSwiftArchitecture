@@ -1,4 +1,2 @@
-github "typelift/Abstract" "master"
 github "facile-it/FunctionalKit" "master"
 github "SwiftKit/Cuckoo"
-github "Moya/Moya"
