@@ -11,7 +11,7 @@ import FunctionalKit
 
 struct JokesApi {
     
-    func fetchCategories() -> AsyncResult<JokeContext, [CategoryDto]> {
+    func fetchCategories<Context>() -> AsyncResult<Context, [CategoryDto]> where Context : JokeContext{
         return get(path: "jokes/categories")
             .mapTT{ $0 as! [String] }
             .mapTT { array in
@@ -19,7 +19,7 @@ struct JokesApi {
             }
     }
     
-    func fetchRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, JokeDto> {
+    func fetchRandomJoke<Context>(forCategoryName categoryName: String) -> AsyncResult<Context, JokeDto> where Context : JokeContext{
         return get(path: "jokes/random?category=\(categoryName)")
             .mapTT {$0 as! [String:Any]}
             .mapT { dictResult in
@@ -35,7 +35,7 @@ struct JokesApi {
             }
     }
 
-    private func get(path: String) -> AsyncResult<JokeContext, Any?> {
+    private func get<Context>(path: String) -> AsyncResult<Context, Any?> where Context: JokeContext {
         return AsyncResult.unfold { context in
             Future.unfold { continuation in
                 let request = NSMutableURLRequest(url: URL(string: context.apiUrl+path)!)
@@ -46,10 +46,12 @@ struct JokesApi {
                 session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
                     if let data = data {
                         let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                        if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
-                            continuation(Result.success(json))
-                        } else {
-                            continuation(Result.failure(JokeError.UnknownServerError))
+                        DispatchQueue.main.async {
+                            if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
+                                continuation(Result.success(json))
+                            } else {
+                                continuation(Result.failure(JokeError.UnknownServerError))
+                            }
                         }
                     }
                 }.resume()

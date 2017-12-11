@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: FunctionalSwiftArchitecture/presentation/JokesPresentation.swift at 2017-12-11 16:09:23 +0000
+// MARK: - Mocks generated from file: FunctionalSwiftArchitecture/presentation/JokesPresentation.swift at 2017-12-11 16:18:45 +0000
 
 //
 //  JokesPresentation.swift
