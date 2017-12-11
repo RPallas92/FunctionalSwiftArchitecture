@@ -9,11 +9,6 @@
 import Foundation
 import FunctionalKit
 
-/**
- * https://api.chucknorris.io/jokes/random?category=dev
- * https://api.chucknorris.io/jokes/categories
- */
-
 struct JokesApi {
     
     func fetchCategories() -> AsyncResult<JokeContext, [CategoryDto]> {
