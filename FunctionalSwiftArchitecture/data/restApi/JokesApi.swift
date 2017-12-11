@@ -24,8 +24,20 @@ struct JokesApi {
             }
     }
     
-    func fetchRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Any?> {
+    func fetchRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, JokeDto> {
         return get(path: "jokes/random?category=\(categoryName)")
+            .mapTT {$0 as! [String:Any]}
+            .mapT { dictResult in
+                dictResult.fold(
+                    onSuccess: { dict in
+                        if let joke:JokeDto = JokeDto(dict) {
+                            return Result.success(joke)
+                        } else {
+                            return Result.failure(JokeError.UnknownServerError)
+                        }
+                    },
+                    onFailure: { Result.failure($0)})
+            }
     }
 
     private func get(path: String) -> AsyncResult<JokeContext, Any?> {

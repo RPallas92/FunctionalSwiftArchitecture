@@ -23,4 +23,17 @@ class JokesApiTests: XCTestCase {
         
         wait(for: [expect], timeout: 10.0)
     }
+    
+    func testFetchRandomJoke() {
+        let expect = expectation(description: "testFetchRandomJoke")
+        let jokesApi = JokesApi()
+        
+        let jokeResult = jokesApi.fetchRandomJoke(forCategoryName: "dev")
+        let context = AppContext()
+        
+        jokeResult.runT(context, { result in
+            expect.fulfill()
+        })
+        
+        wait(for: [expect], timeout: 10.0)    }
 }

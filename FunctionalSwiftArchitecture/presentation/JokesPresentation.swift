@@ -76,7 +76,7 @@ func getRandomJoke(categoryName: String) -> AsyncResult<GetRandomJokeContext, Vo
 }
 
 fileprivate func toJokeViewModel(from joke: Joke) -> JokeViewModel {
-    return JokeViewModel(id: joke.id, category: joke.category, iconUrl: joke.iconUrl, url: joke.url, value: joke.value)
+    return JokeViewModel(id: joke.id, iconUrl: joke.iconUrl, url: joke.url, value: joke.value)
 }
 
 fileprivate func toCategoryViewModel(from category: Category) -> CategoryViewModel{

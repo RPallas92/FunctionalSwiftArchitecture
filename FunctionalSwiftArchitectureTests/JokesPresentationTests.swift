@@ -26,7 +26,6 @@ class JokesPresentationTests: XCTestCase {
     let jokeMatcher = ParameterMatcher { (joke: JokeViewModel) -> Bool in
         let expectedJoke = JokeViewModel(
             id: "ye0_hnd3rgq68e_pfvsqqg",
-            category: ["dev"],
             iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
             url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
             value: "Chuck Norris can instantiate an abstract class."

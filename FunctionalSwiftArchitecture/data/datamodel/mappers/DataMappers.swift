@@ -9,7 +9,7 @@
 import Foundation
 
 func mapToJoke(from jokeDto:JokeDto) -> Joke {
-    return Joke(id: jokeDto.id, category: jokeDto.category, iconUrl: jokeDto.iconUrl, url: jokeDto.url, value: jokeDto.value)
+    return Joke(id: jokeDto.id, iconUrl: jokeDto.iconUrl, url: jokeDto.url, value: jokeDto.value)
 }
 
 func mapToCategory(from categoryDto:CategoryDto) -> Category {

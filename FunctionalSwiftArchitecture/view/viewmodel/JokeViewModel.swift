@@ -10,7 +10,6 @@ import Foundation
 
 struct JokeViewModel {
     var id:String
-    var category: [String]
     var iconUrl: String
     var url: String
     var value: String
