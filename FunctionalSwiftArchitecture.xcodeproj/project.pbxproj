@@ -24,7 +24,6 @@
 		9609899B1FD6E36C0062ACDC /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899A1FD6E36C0062ACDC /* Joke.swift */; };
 		9609899D1FD6E3C80062ACDC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899C1FD6E3C80062ACDC /* Category.swift */; };
 		9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609899E1FD6E4190062ACDC /* JokesRepository.swift */; };
-		960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */; };
 		960989A41FD82A3C0062ACDC /* JokesNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */; };
 		960989A51FD82A650062ACDC /* DataMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989981FD6E3240062ACDC /* DataMappers.swift */; };
 		960989A61FD82A680062ACDC /* JokeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989931FD6BFD60062ACDC /* JokeDto.swift */; };
@@ -325,7 +324,6 @@
 		9609899A1FD6E36C0062ACDC /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		9609899C1FD6E3C80062ACDC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9609899E1FD6E4190062ACDC /* JokesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
-		960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesNetworkDataSourceTests.swift; sourceTree = "<group>"; };
 		960989B21FD82BF40062ACDC /* .Abstract.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .Abstract.version; sourceTree = "<group>"; };
 		960989B31FD82BF40062ACDC /* .FunctionalKit.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FunctionalKit.version; sourceTree = "<group>"; };
 		960989B41FD82BF40062ACDC /* .SwiftCheck.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .SwiftCheck.version; sourceTree = "<group>"; };
@@ -951,12 +949,10 @@
 		9609895A1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
-				961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */,
-				960989A21FD829F40062ACDC /* JokesNetworkDataSourceTests.swift */,
+				969C8C551FDEE8F2007F7D97 /* mocks */,
 				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
-				961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */,
 				969C8C111FDED19A007F7D97 /* JokesApiTests.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
@@ -2702,6 +2698,15 @@
 			path = restApi;
 			sourceTree = "<group>";
 		};
+		969C8C551FDEE8F2007F7D97 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */,
+				961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */,
+			);
+			path = mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3082,7 +3087,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/FunctionalSwiftArchitectureTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR/FunctionalSwiftArchitecture\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/presentation/JokesPresentation.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/FunctionalSwiftArchitectureTests/mocks/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR/FunctionalSwiftArchitecture\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/presentation/JokesPresentation.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3125,7 +3130,6 @@
 				960989A91FD82A880062ACDC /* JokeContext.swift in Sources */,
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
-				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
 				961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */,
 				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
