@@ -12,7 +12,7 @@ protocol JokeContext {
     var jokesDataSource: JokesDataSource {get}
 }
 class AppContext: JokeContext {
-    var apiUrl = "https://api.chucknorris.io/jokes/"
+    var apiUrl = "https://api.chucknorris.io/"
     var jokesDetailPage = JokeDetailsPage()
     var jokesDataSource: JokesDataSource = JokesNetworkDataSource()
 }

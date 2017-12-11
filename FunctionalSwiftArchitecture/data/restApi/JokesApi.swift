@@ -16,8 +16,12 @@ import FunctionalKit
 
 struct JokesApi {
     
-    func fetchCategories() -> AsyncResult<JokeContext, Any?> {
+    func fetchCategories() -> AsyncResult<JokeContext, [CategoryDto]> {
         return get(path: "jokes/categories")
+            .mapTT{ $0 as! [String] }
+            .mapTT { array in
+                array.map { CategoryDto(name: $0) }
+            }
     }
     
     func fetchRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Any?> {
