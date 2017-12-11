@@ -1,4 +1,5 @@
 github "SwiftKit/Cuckoo" "0.10.2"
-github "facile-it/FunctionalKit" "b54351a7465a7eb95973b1c5d8dcbd4be9ccf88c"
-github "typelift/Abstract" "ead45c334093a0bde679d21d3a08eefb20094f1d"
-github "typelift/SwiftCheck" "d7a794b14f26ccebc0b396e1cc6bd6698b62d3ce"
+github "facile-it/FunctionalKit" "827534034d368222bbaf114e5969d3f371887155"
+github "trill-lang/FileCheck" "0.0.5"
+github "typelift/Abstract" "0.0.2"
+github "typelift/SwiftCheck" "0.9.1"

@@ -1,4 +1,4 @@
-#if !XCODE_BUILD
+#if SWIFT_PACKAGE
     import Operadics
 #endif
 import Abstract
@@ -10,9 +10,9 @@ public protocol ExponentialType {
 	func call(_ source: SourceType) -> TargetType
 }
 
-// sourcery: profunctor
-// sourcery: construct = "init(x)"
-// sourcery: needsContext
+// sourcery: testProfunctor
+// sourcery: testConstruct = "init(x)"
+// sourcery: testNeedsContext
 public struct Exponential<A,B>: ExponentialType {
 	private let _call: (A) -> B
 

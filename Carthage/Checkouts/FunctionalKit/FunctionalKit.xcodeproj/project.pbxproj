@@ -21,6 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		380C6FEA1FDC0EF400DA01FB /* MonadTransformers3.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FE71FDC0EF400DA01FB /* MonadTransformers3.generated.swift */; };
+		380C6FEB1FDC0EF400DA01FB /* MonadTransformers3.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FE71FDC0EF400DA01FB /* MonadTransformers3.generated.swift */; };
+		380C6FEE1FDC0EF400DA01FB /* MonadTransformers2.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FE91FDC0EF400DA01FB /* MonadTransformers2.generated.swift */; };
+		380C6FEF1FDC0EF400DA01FB /* MonadTransformers2.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FE91FDC0EF400DA01FB /* MonadTransformers2.generated.swift */; };
+		380C6FF31FDC1D9100DA01FB /* FunctorTransformers3.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FF01FDC1D9100DA01FB /* FunctorTransformers3.generated.swift */; };
+		380C6FF41FDC1D9100DA01FB /* FunctorTransformers3.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FF01FDC1D9100DA01FB /* FunctorTransformers3.generated.swift */; };
+		380C6FF71FDC1D9100DA01FB /* FunctorTransformers2.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FF21FDC1D9100DA01FB /* FunctorTransformers2.generated.swift */; };
+		380C6FF81FDC1D9100DA01FB /* FunctorTransformers2.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6FF21FDC1D9100DA01FB /* FunctorTransformers2.generated.swift */; };
 		385370691FC40D86004096EB /* ArrayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385370681FC40D86004096EB /* ArrayType.swift */; };
 		3853706A1FC40D86004096EB /* ArrayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385370681FC40D86004096EB /* ArrayType.swift */; };
 		3853706C1FC44178004096EB /* ReaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853706B1FC44178004096EB /* ReaderType.swift */; };
@@ -32,8 +40,8 @@
 		3877789B1FBDB01A00F4F5E4 /* CoproductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877789A1FBDB01A00F4F5E4 /* CoproductTests.swift */; };
 		3877789D1FBDCFA900F4F5E4 /* ExponentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877789C1FBDCFA900F4F5E4 /* ExponentialTests.swift */; };
 		3877789F1FBDF0AC00F4F5E4 /* FixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877789E1FBDF0AC00F4F5E4 /* FixedTests.swift */; };
-		38939BA11FC2DC3100012794 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA01FC2DC3100012794 /* Protocols.swift */; };
-		38939BA21FC2DC3100012794 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA01FC2DC3100012794 /* Protocols.swift */; };
+		38939BA11FC2DC3100012794 /* TypeConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA01FC2DC3100012794 /* TypeConstructor.swift */; };
+		38939BA21FC2DC3100012794 /* TypeConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA01FC2DC3100012794 /* TypeConstructor.swift */; };
 		38939BA41FC32CB200012794 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA31FC32CB200012794 /* OptionalType.swift */; };
 		38939BA51FC32CB200012794 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38939BA31FC32CB200012794 /* OptionalType.swift */; };
 		38DA20781FD549740010AAEC /* LawsTests.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA20771FD549740010AAEC /* LawsTests.generated.swift */; };
@@ -41,6 +49,8 @@
 		38DA20891FD5A2930010AAEC /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA20851FD5A2930010AAEC /* AnyError.swift */; };
 		38DA208A1FD5A2930010AAEC /* CustomArbitraryDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA20861FD5A2930010AAEC /* CustomArbitraryDefinitions.swift */; };
 		38DA208B1FD5A2930010AAEC /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA20871FD5A2930010AAEC /* Assertion.swift */; };
+		38DD97891FDC2D0A00C67DFB /* ReaderTransformer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD97881FDC2D0A00C67DFB /* ReaderTransformer.generated.swift */; };
+		38DD978A1FDC2D0A00C67DFB /* ReaderTransformer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD97881FDC2D0A00C67DFB /* ReaderTransformer.generated.swift */; };
 		38DEDC6D1FC33BDB00D7984C /* WriterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEDC6C1FC33BDB00D7984C /* WriterType.swift */; };
 		38DEDC6E1FC33BDB00D7984C /* WriterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEDC6C1FC33BDB00D7984C /* WriterType.swift */; };
 		38F179951FBDA3F500243994 /* FunctionalKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F179931FBDA3F500243994 /* FunctionalKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,6 +134,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		380C6FE71FDC0EF400DA01FB /* MonadTransformers3.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonadTransformers3.generated.swift; sourceTree = "<group>"; };
+		380C6FE91FDC0EF400DA01FB /* MonadTransformers2.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonadTransformers2.generated.swift; sourceTree = "<group>"; };
+		380C6FF01FDC1D9100DA01FB /* FunctorTransformers3.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctorTransformers3.generated.swift; sourceTree = "<group>"; };
+		380C6FF21FDC1D9100DA01FB /* FunctorTransformers2.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctorTransformers2.generated.swift; sourceTree = "<group>"; };
 		385370681FC40D86004096EB /* ArrayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayType.swift; sourceTree = "<group>"; };
 		3853706B1FC44178004096EB /* ReaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderType.swift; sourceTree = "<group>"; };
 		3853706E1FC46BA4004096EB /* FutureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureType.swift; sourceTree = "<group>"; };
@@ -131,15 +145,15 @@
 		3877789A1FBDB01A00F4F5E4 /* CoproductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoproductTests.swift; sourceTree = "<group>"; };
 		3877789C1FBDCFA900F4F5E4 /* ExponentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialTests.swift; sourceTree = "<group>"; };
 		3877789E1FBDF0AC00F4F5E4 /* FixedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTests.swift; sourceTree = "<group>"; };
-		38939BA01FC2DC3100012794 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		38939BA01FC2DC3100012794 /* TypeConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConstructor.swift; sourceTree = "<group>"; };
 		38939BA31FC32CB200012794 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
-		38DA20751FD549000010AAEC /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };
 		38DA20761FD549420010AAEC /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
 		38DA20771FD549740010AAEC /* LawsTests.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LawsTests.generated.swift; sourceTree = "<group>"; };
 		38DA20841FD5A2930010AAEC /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		38DA20851FD5A2930010AAEC /* AnyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		38DA20861FD5A2930010AAEC /* CustomArbitraryDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomArbitraryDefinitions.swift; sourceTree = "<group>"; };
 		38DA20871FD5A2930010AAEC /* Assertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
+		38DD97881FDC2D0A00C67DFB /* ReaderTransformer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTransformer.generated.swift; sourceTree = "<group>"; };
 		38DEDC6C1FC33BDB00D7984C /* WriterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterType.swift; sourceTree = "<group>"; };
 		38F179911FBDA3F500243994 /* FunctionalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F179931FBDA3F500243994 /* FunctionalKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunctionalKit-iOS.h"; sourceTree = "<group>"; };
@@ -214,6 +228,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38B9E7EB1FD8381200E55BE3 /* Algebra */ = {
+			isa = PBXGroup;
+			children = (
+				38F179AE1FBDA7B400243994 /* Boolean.swift */,
+				38F179AD1FBDA7B400243994 /* Coproduct.swift */,
+				38F179B31FBDA7B500243994 /* Exponential.swift */,
+				38F3C8201FBF2B370014D30D /* Inclusive.swift */,
+				38F179B41FBDA7B500243994 /* Product.swift */,
+				38F179B51FBDA7B500243994 /* Reference.swift */,
+			);
+			name = Algebra;
+			sourceTree = "<group>";
+		};
+		38B9E7EE1FD8384200E55BE3 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				38F179AF1FBDA7B400243994 /* Combinators.swift */,
+				38F179B01FBDA7B400243994 /* Curry.swift */,
+				38F179B11FBDA7B500243994 /* Fixed.swift */,
+				38F179B21FBDA7B500243994 /* Operators.swift */,
+				38F179B61FBDA7B500243994 /* Typealiases.swift */,
+				38F179AC1FBDA7B400243994 /* Weakly.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
+		38B9E7EF1FD8388A00E55BE3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				38B9E7F01FD8394300E55BE3 /* Transformers */,
+				385370681FC40D86004096EB /* ArrayType.swift */,
+				3853706E1FC46BA4004096EB /* FutureType.swift */,
+				38939BA31FC32CB200012794 /* OptionalType.swift */,
+				3853706B1FC44178004096EB /* ReaderType.swift */,
+				38F3C81D1FBEF71D0014D30D /* ResultType.swift */,
+				385370711FC48927004096EB /* StateType.swift */,
+				38939BA01FC2DC3100012794 /* TypeConstructor.swift */,
+				38DEDC6C1FC33BDB00D7984C /* WriterType.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		38B9E7F01FD8394300E55BE3 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				380C6FF21FDC1D9100DA01FB /* FunctorTransformers2.generated.swift */,
+				380C6FF01FDC1D9100DA01FB /* FunctorTransformers3.generated.swift */,
+				380C6FE91FDC0EF400DA01FB /* MonadTransformers2.generated.swift */,
+				380C6FE71FDC0EF400DA01FB /* MonadTransformers3.generated.swift */,
+				38DD97881FDC2D0A00C67DFB /* ReaderTransformer.generated.swift */,
+			);
+			name = Transformers;
+			sourceTree = "<group>";
+		};
 		38DA20831FD5A2930010AAEC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +319,6 @@
 				38F179AB1FBDA77900243994 /* Cartfile */,
 				38F179AA1FBDA6D900243994 /* LICENSE */,
 				38F179D51FBDAB1C00243994 /* README.md */,
-				38DA20751FD549000010AAEC /* .sourcery.yml */,
 				38F179A81FBDA6D900243994 /* .travis.yml */,
 				38F179A91FBDA6D900243994 /* codecov.yml */,
 			);
@@ -327,26 +394,9 @@
 		OBJ_8 /* FunctionalKit */ = {
 			isa = PBXGroup;
 			children = (
-				385370681FC40D86004096EB /* ArrayType.swift */,
-				38F179AE1FBDA7B400243994 /* Boolean.swift */,
-				38F179AF1FBDA7B400243994 /* Combinators.swift */,
-				38F179AD1FBDA7B400243994 /* Coproduct.swift */,
-				38F179B01FBDA7B400243994 /* Curry.swift */,
-				38F179B31FBDA7B500243994 /* Exponential.swift */,
-				38F179B11FBDA7B500243994 /* Fixed.swift */,
-				3853706E1FC46BA4004096EB /* FutureType.swift */,
-				38F3C8201FBF2B370014D30D /* Inclusive.swift */,
-				38F179B21FBDA7B500243994 /* Operators.swift */,
-				38939BA31FC32CB200012794 /* OptionalType.swift */,
-				38F179B41FBDA7B500243994 /* Product.swift */,
-				38939BA01FC2DC3100012794 /* Protocols.swift */,
-				3853706B1FC44178004096EB /* ReaderType.swift */,
-				38F179B51FBDA7B500243994 /* Reference.swift */,
-				38F3C81D1FBEF71D0014D30D /* ResultType.swift */,
-				385370711FC48927004096EB /* StateType.swift */,
-				38F179B61FBDA7B500243994 /* Typealiases.swift */,
-				38F179AC1FBDA7B400243994 /* Weakly.swift */,
-				38DEDC6C1FC33BDB00D7984C /* WriterType.swift */,
+				38B9E7EB1FD8381200E55BE3 /* Algebra */,
+				38B9E7EF1FD8388A00E55BE3 /* Category */,
+				38B9E7EE1FD8384200E55BE3 /* Functions */,
 			);
 			name = FunctionalKit;
 			path = Sources/FunctionalKit;
@@ -439,7 +489,7 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 9999;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					38F179901FBDA3F500243994 = {
 						CreatedOnToolsVersion = 9.1;
@@ -493,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Checking for Sourcery...\"\nif [ -f \"./sourcery\" ]; then\n    echo \"Sourcery found, will generate files.\"\n    ./sourcery\nelse\n    echo \"Sourcery is not installed, ignoring.\"\nfi";
+			shellScript = "echo \"Checking for Sourcery...\"\nif [ -f \"./sourcery\" ]; then\n    echo \"Sourcery found.\"\n    echo \"Generating source files...\"\n    ./sourcery --sources \"Sources\" --templates \"Templates/Sources\" --output \"Sources/FunctionalKit\"\n    echo \"Generating test files...\"\n    ./sourcery --sources \"Sources\" --templates \"Templates/Tests\" --output \"Tests/FunctionalKitTests\"\nelse\n    echo \"Sourcery is not installed, ignoring.\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -508,19 +558,24 @@
 				38F179C41FBDA7B500243994 /* Operators.swift in Sources */,
 				385370701FC46BA4004096EB /* FutureType.swift in Sources */,
 				38F179C61FBDA7B500243994 /* Exponential.swift in Sources */,
+				380C6FEB1FDC0EF400DA01FB /* MonadTransformers3.generated.swift in Sources */,
 				3853706A1FC40D86004096EB /* ArrayType.swift in Sources */,
 				38F179CA1FBDA7B500243994 /* Reference.swift in Sources */,
 				3853706D1FC44178004096EB /* ReaderType.swift in Sources */,
 				38F3C8221FBF2B370014D30D /* Inclusive.swift in Sources */,
 				38F3C81F1FBEF71E0014D30D /* ResultType.swift in Sources */,
 				38F179B81FBDA7B500243994 /* Weakly.swift in Sources */,
+				38DD978A1FDC2D0A00C67DFB /* ReaderTransformer.generated.swift in Sources */,
+				380C6FF81FDC1D9100DA01FB /* FunctorTransformers2.generated.swift in Sources */,
 				38F179CC1FBDA7B500243994 /* Typealiases.swift in Sources */,
 				385370731FC48927004096EB /* StateType.swift in Sources */,
 				38DEDC6E1FC33BDB00D7984C /* WriterType.swift in Sources */,
 				38F179BE1FBDA7B500243994 /* Combinators.swift in Sources */,
-				38939BA21FC2DC3100012794 /* Protocols.swift in Sources */,
+				38939BA21FC2DC3100012794 /* TypeConstructor.swift in Sources */,
 				38939BA51FC32CB200012794 /* OptionalType.swift in Sources */,
+				380C6FEF1FDC0EF400DA01FB /* MonadTransformers2.generated.swift in Sources */,
 				38F179BC1FBDA7B500243994 /* Boolean.swift in Sources */,
+				380C6FF41FDC1D9100DA01FB /* FunctorTransformers3.generated.swift in Sources */,
 				38F179BA1FBDA7B500243994 /* Coproduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,19 +625,24 @@
 				38F179C11FBDA7B500243994 /* Fixed.swift in Sources */,
 				3853706F1FC46BA4004096EB /* FutureType.swift in Sources */,
 				38F179BB1FBDA7B500243994 /* Boolean.swift in Sources */,
+				380C6FEA1FDC0EF400DA01FB /* MonadTransformers3.generated.swift in Sources */,
 				385370691FC40D86004096EB /* ArrayType.swift in Sources */,
 				38F179B71FBDA7B500243994 /* Weakly.swift in Sources */,
 				3853706C1FC44178004096EB /* ReaderType.swift in Sources */,
 				38F3C8211FBF2B370014D30D /* Inclusive.swift in Sources */,
 				38F3C81E1FBEF71E0014D30D /* ResultType.swift in Sources */,
 				38F179C91FBDA7B500243994 /* Reference.swift in Sources */,
+				38DD97891FDC2D0A00C67DFB /* ReaderTransformer.generated.swift in Sources */,
+				380C6FF71FDC1D9100DA01FB /* FunctorTransformers2.generated.swift in Sources */,
 				38F179B91FBDA7B500243994 /* Coproduct.swift in Sources */,
 				385370721FC48927004096EB /* StateType.swift in Sources */,
 				38DEDC6D1FC33BDB00D7984C /* WriterType.swift in Sources */,
 				38F179CB1FBDA7B500243994 /* Typealiases.swift in Sources */,
-				38939BA11FC2DC3100012794 /* Protocols.swift in Sources */,
+				38939BA11FC2DC3100012794 /* TypeConstructor.swift in Sources */,
 				38939BA41FC32CB200012794 /* OptionalType.swift in Sources */,
+				380C6FEE1FDC0EF400DA01FB /* MonadTransformers2.generated.swift in Sources */,
 				38F179C71FBDA7B500243994 /* Product.swift in Sources */,
+				380C6FF31FDC1D9100DA01FB /* FunctorTransformers3.generated.swift in Sources */,
 				38F179C51FBDA7B500243994 /* Exponential.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +692,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -662,7 +723,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "-DXcode -DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.broomburgo.FunctionalKit-iOS";
 				PRODUCT_NAME = FunctionalKit;
 				SDKROOT = iphoneos;
@@ -706,6 +766,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -732,7 +793,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DXcode -DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.broomburgo.FunctionalKit-iOS";
 				PRODUCT_NAME = FunctionalKit;
 				SDKROOT = iphoneos;
@@ -767,7 +827,7 @@
 		OBJ_24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -778,7 +838,6 @@
 				INFOPLIST_FILE = FunctionalKit.xcodeproj/FunctionalKitTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXCODE_BUILD";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = FunctionalKitTests;
@@ -788,7 +847,7 @@
 		OBJ_25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -799,7 +858,6 @@
 				INFOPLIST_FILE = FunctionalKit.xcodeproj/FunctionalKitTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXCODE_BUILD";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = FunctionalKitTests;
@@ -810,12 +868,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
@@ -823,7 +905,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
 			};
@@ -842,7 +923,6 @@
 				INFOPLIST_FILE = FunctionalKit.xcodeproj/FunctionalKit_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = FunctionalKit;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -866,7 +946,6 @@
 				INFOPLIST_FILE = FunctionalKit.xcodeproj/FunctionalKit_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = FunctionalKit;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -881,18 +960,40 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};

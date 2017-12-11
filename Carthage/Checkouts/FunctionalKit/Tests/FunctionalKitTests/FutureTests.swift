@@ -1,6 +1,10 @@
 import XCTest
 import Operadics
 @testable import FunctionalKit
+import Foundation
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 class FutureTests: XCTestCase {
     
@@ -42,6 +46,18 @@ class FutureTests: XCTestCase {
             }
         }
     }
+
+	func testAsync() {
+		expecting("Future completes") { fulfill in
+			let f = Future<String>.unfold { done in
+				DispatchQueue.main.async {
+					done("test")
+					fulfill()
+				}
+			}
+			f.start()
+		}
+	}
     
     static var allTests = [
         ("testLiftOneArg", testLiftOneArg),

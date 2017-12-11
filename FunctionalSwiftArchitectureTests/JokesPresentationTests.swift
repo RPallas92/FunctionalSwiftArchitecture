@@ -26,7 +26,6 @@ class JokesPresentationTests: XCTestCase {
     let jokeMatcher = ParameterMatcher { (joke: JokeViewModel) -> Bool in
         let expectedJoke = JokeViewModel(
             id: "ye0_hnd3rgq68e_pfvsqqg",
-            category: ["dev"],
             iconUrl: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
             url: "http://api.chucknorris.io/jokes/ye0_hnd3rgq68e_pfvsqqg",
             value: "Chuck Norris can instantiate an abstract class."
@@ -64,6 +63,8 @@ class JokesPresentationTests: XCTestCase {
         }
         
         let context = GetCategoriesContext(view: categoriesListView)
+        context.jokesDataSource = JokesInMemoryDataSource()
+
         let categoriesAsyncResult = getCategories()
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
@@ -120,6 +121,8 @@ class JokesPresentationTests: XCTestCase {
         }
         
         let context = GetRandomJokeContext(view: jokeDetailView)
+        context.jokesDataSource = JokesInMemoryDataSource()
+
         let jokeAsyncResult = getRandomJoke(categoryName: "dev")
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).

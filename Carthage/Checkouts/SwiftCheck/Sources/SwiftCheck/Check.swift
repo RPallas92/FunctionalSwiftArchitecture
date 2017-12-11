@@ -227,9 +227,7 @@ infix operator ==== : ComparisonPrecedence
 public func ==== <A>(x : A, y : A) -> Property
 	where A : Equatable
 {
-	let isEq = (x == y)
-	let text = isEq ? "==" : "!="
-	return isEq.counterexample("\(x) \(text) \(y)")
+	return (x == y).counterexample(String(describing: x) + " /= " + String(describing: y))
 }
 
 precedencegroup SwiftCheckLabelPrecedence {

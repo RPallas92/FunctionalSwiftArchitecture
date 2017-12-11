@@ -1,4 +1,4 @@
-#if !XCODE_BUILD
+#if SWIFT_PACKAGE
     import Operadics
 #endif
 import Abstract
@@ -10,8 +10,8 @@ public protocol InclusiveType {
 	func fold<T>(onLeft: @escaping (LeftType) -> T, onCenter: @escaping (LeftType,RightType) -> T, onRight: @escaping (RightType) -> T) -> T
 }
 
-// sourcery: bifunctor
-// sourcery: construct = "random(x,y)"
+// sourcery: testBifunctor
+// sourcery: testConstruct = "random(x,y)"
 public enum Inclusive<A,B>: InclusiveType {
 	case left(A)
 	case center(A,B)

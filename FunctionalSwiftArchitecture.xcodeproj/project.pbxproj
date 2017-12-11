@@ -11,7 +11,6 @@
 		9609894C1FD5A01B0062ACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894A1FD5A01B0062ACDC /* Main.storyboard */; };
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
-		9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896C1FD5B5450062ACDC /* Abstract.framework */; };
 		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* DetailViewController.swift */; };
 		960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897C1FD6B6D10062ACDC /* MasterViewController.swift */; };
@@ -55,6 +54,10 @@
 		961C82821FDAE548003CB298 /* Cuckoo.framework in Copy Files - Carthage - Tests */ = {isa = PBXBuildFile; fileRef = 961C827D1FDADBC6003CB298 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
+		961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
+		961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */; };
+		969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
+		969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C111FDED19A007F7D97 /* JokesApiTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -878,6 +881,12 @@
 		961C827D1FDADBC6003CB298 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		961C827F1FDAE2D0003CB298 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		961C82861FDC2582003CB298 /* JokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDataSource.swift; sourceTree = "<group>"; };
+		961C82AF1FDD90C6003CB298 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		961C82DF1FDD9428003CB298 /* JokesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApi.swift; sourceTree = "<group>"; };
+		961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesInMemoryDataSource.swift; sourceTree = "<group>"; };
+		961C82E61FDDA092003CB298 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		961C82E81FDDA0D4003CB298 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		969C8C111FDED19A007F7D97 /* JokesApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApiTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -886,7 +895,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
-				9609896F1FD5B5460062ACDC /* Abstract.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +956,8 @@
 				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
+				961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */,
+				969C8C111FDED19A007F7D97 /* JokesApiTests.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -955,6 +965,9 @@
 		9609896B1FD5B5450062ACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				961C82E81FDDA0D4003CB298 /* Result.framework */,
+				961C82E61FDDA092003CB298 /* Alamofire.framework */,
+				961C82AF1FDD90C6003CB298 /* Moya.framework */,
 				961C827D1FDADBC6003CB298 /* Cuckoo.framework */,
 				960989B01FD82BF40062ACDC /* Carthage */,
 				9609896C1FD5B5450062ACDC /* Abstract.framework */,
@@ -977,6 +990,7 @@
 		9609897F1FD6B6D10062ACDC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				961C82BF1FDD93DB003CB298 /* restApi */,
 				960989921FD6BFBC0062ACDC /* datamodel */,
 				960989841FD6B7110062ACDC /* datasource */,
 				9609899E1FD6E4190062ACDC /* JokesRepository.swift */,
@@ -2680,6 +2694,14 @@
 			path = viewmodel;
 			sourceTree = "<group>";
 		};
+		961C82BF1FDD93DB003CB298 /* restApi */ = {
+			isa = PBXGroup;
+			children = (
+				961C82DF1FDD9428003CB298 /* JokesApi.swift */,
+			);
+			path = restApi;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3038,12 +3060,10 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3074,6 +3094,7 @@
 				9609899B1FD6E36C0062ACDC /* Joke.swift in Sources */,
 				960989991FD6E3240062ACDC /* DataMappers.swift in Sources */,
 				960989941FD6BFD60062ACDC /* JokeDto.swift in Sources */,
+				961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */,
 				960989961FD6DC0E0062ACDC /* CategoryDto.swift in Sources */,
 				9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */,
 				9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */,
@@ -3100,13 +3121,16 @@
 				960989AD1FD82B0F0062ACDC /* JokesRepository.swift in Sources */,
 				960989A81FD82A700062ACDC /* AsyncResult.swift in Sources */,
 				960989A41FD82A3C0062ACDC /* JokesNetworkDataSource.swift in Sources */,
+				969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */,
 				960989A91FD82A880062ACDC /* JokeContext.swift in Sources */,
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				960989A31FD829F40062ACDC /* JokesNetworkDataSourceTests.swift in Sources */,
+				961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */,
 				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
 				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
+				969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,

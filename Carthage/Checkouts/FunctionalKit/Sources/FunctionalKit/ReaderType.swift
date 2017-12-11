@@ -1,10 +1,16 @@
-#if !XCODE_BUILD
+#if SWIFT_PACKAGE
     import Operadics
 #endif
 import Abstract
 
 // MARK: - Definiton
 
+// sourcery: functor
+// sourcery: monad
+// sourcery: customTransformer
+// sourcery: concrete = "Reader"
+// sourcery: secondaryParameter = "EnvironmentType"
+// sourcery: escapingHOF
 public protocol ReaderType: TypeConstructor, ExponentialType {
 	associatedtype EnvironmentType
 
@@ -20,12 +26,12 @@ extension ReaderType {
 }
 
 // MARK: - Data
-// sourcery: functor
-// sourcery: applicative
-// sourcery: monad
-// sourcery: construct = "unfold { _ in x }"
-// sourcery: needsContext
-// sourcery: needsSecondary
+// sourcery: testFunctor
+// sourcery: testApplicative
+// sourcery: testMonad
+// sourcery: testConstruct = "unfold { _ in x }"
+// sourcery: testNeedsContext
+// sourcery: testSecondaryParameter
 public struct Reader<E,A>: ReaderType {
 	public typealias ParameterType = A
 
