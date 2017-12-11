@@ -14,7 +14,7 @@ class JokesApiTests: XCTestCase {
         let expect = expectation(description: "fetchCategories")
         let jokesApi = JokesApi()
         
-        let categoriesResult:AsyncResult<AppContext, [CategoryDto]> = jokesApi.fetchCategories()
+        let categoriesResult:AsyncResult<AppContext, [String]> = jokesApi.fetchCategories()
         let context = AppContext()
         
         categoriesResult.runT(context, { result in
@@ -30,7 +30,7 @@ class JokesApiTests: XCTestCase {
         let expect = expectation(description: "testFetchRandomJoke")
         let jokesApi = JokesApi()
         
-        let jokeResult:AsyncResult<AppContext, JokeDto> = jokesApi.fetchRandomJoke(forCategoryName: "dev")
+        let jokeResult:AsyncResult<AppContext, [String:Any]> = jokesApi.fetchRandomJoke(forCategoryName: "dev")
         let context = AppContext()
         
         jokeResult.runT(context, { result in

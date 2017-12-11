@@ -11,28 +11,14 @@ import FunctionalKit
 
 struct JokesApi {
     
-    func fetchCategories<Context>() -> AsyncResult<Context, [CategoryDto]> where Context : JokeContext{
+    func fetchCategories<Context>() -> AsyncResult<Context, [String]> where Context : JokeContext{
         return get(path: "jokes/categories")
             .mapTT{ $0 as! [String] }
-            .mapTT { array in
-                array.map { CategoryDto(name: $0) }
-            }
     }
     
-    func fetchRandomJoke<Context>(forCategoryName categoryName: String) -> AsyncResult<Context, JokeDto> where Context : JokeContext{
+    func fetchRandomJoke<Context>(forCategoryName categoryName: String) -> AsyncResult<Context, [String:Any]> where Context : JokeContext{
         return get(path: "jokes/random?category=\(categoryName)")
             .mapTT {$0 as! [String:Any]}
-            .mapT { dictResult in
-                dictResult.fold(
-                    onSuccess: { dict in
-                        if let joke:JokeDto = JokeDto(dict) {
-                            return Result.success(joke)
-                        } else {
-                            return Result.failure(JokeError.UnknownServerError)
-                        }
-                    },
-                    onFailure: { Result.failure($0)})
-            }
     }
 
     private func get<Context>(path: String) -> AsyncResult<Context, Any?> where Context: JokeContext {
