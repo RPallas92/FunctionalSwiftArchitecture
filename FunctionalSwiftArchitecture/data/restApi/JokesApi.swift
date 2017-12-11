@@ -7,32 +7,42 @@
 //
 
 import Foundation
+import FunctionalKit
 
 /**
- * https://github.com/Moya/Moya/blob/master/docs/Examples/Basic.md
  * https://api.chucknorris.io/jokes/random?category=dev
  * https://api.chucknorris.io/jokes/categories
  */
 
-enum JokesApi {
-    case fetchCategories
-    case fetchRandomJoke(forCategoryName: String)
-}
-
-extension JokesApi {
-    var baseURL: URL { return URL(string: "https://api.chucknorris.io")! }
+struct JokesApi {
     
-    
-    var path: String {
-        switch self {
-        case .fetchCategories:
-            return "/jokes/categories"
-        case .fetchRandomJoke(let categoryName):
-            return "/jokes/random?category=\(categoryName)"
-        }
+    func fetchCategories() -> AsyncResult<JokeContext, Any?> {
+        return get(path: "jokes/categories")
     }
     
-    var headers: [String : String]? {
-        return ["Content-type": "application/json"]
+    func fetchRandomJoke(forCategoryName categoryName: String) -> AsyncResult<JokeContext, Any?> {
+        return get(path: "jokes/random?category=\(categoryName)")
+    }
+
+    private func get(path: String) -> AsyncResult<JokeContext, Any?> {
+        return AsyncResult.unfold { context in
+            Future.unfold { continuation in
+                let request = NSMutableURLRequest(url: URL(string: context.apiUrl+path)!)
+                request.addValue("application/json", forHTTPHeaderField: "Content-type")
+                request.httpMethod = "GET"
+                
+                let session = URLSession(configuration: URLSessionConfiguration.default)
+                session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
+                    if let data = data {
+                        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                        if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
+                            continuation(Result.success(json))
+                        } else {
+                            continuation(Result.failure(JokeError.UnknownServerError))
+                        }
+                    }
+                }.resume()
+            }
+        }
     }
 }
