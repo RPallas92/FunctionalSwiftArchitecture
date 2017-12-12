@@ -39,6 +39,8 @@ struct JokesApi {
                                 continuation(Result.failure(JokeError.UnknownServerError))
                             }
                         }
+                    } else {
+                        continuation(Result.failure(JokeError.UnknownServerError))
                     }
                 }.resume()
             }

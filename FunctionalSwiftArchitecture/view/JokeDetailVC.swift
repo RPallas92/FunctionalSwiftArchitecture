@@ -11,12 +11,7 @@ import UIKit
 class JokeDetailVC: UIViewController, JokeDetailView {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     var context:GetRandomJokeContext?
-    var categoryName: String? {
-        didSet {
-            setUpDependencyGraph()
-            configureView()
-        }
-    }
+    var categoryName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2,4 +2,118 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/view/JokeDetailVC.swift"
+            timestampString = "534771334.322654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "showGenericError()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+            timestampString = "534771334.323011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "drawJoke(joke:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FunctionalSwiftArchitecture.drawJoke(joke: FunctionalSwiftArchitecture.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534771334.427039"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitecture.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitecture.drawJoke(joke: FunctionalSwiftArchitecture.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534771334.428798"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+            timestampString = "534771334.323068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "drawJoke(joke:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+            timestampString = "534771334.323115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "drawJoke(joke:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitecture/view/JokeDetailVC.swift"
+            timestampString = "534771334.323162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "configureView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

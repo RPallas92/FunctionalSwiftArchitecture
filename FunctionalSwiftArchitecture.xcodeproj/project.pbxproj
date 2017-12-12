@@ -55,6 +55,7 @@
 		961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */; };
 		969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 		969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C111FDED19A007F7D97 /* JokesApiTests.swift */; };
+		969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96098C631FD82BF50062ACDC /* Abstract.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -889,6 +890,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */,
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3054,10 +3056,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
