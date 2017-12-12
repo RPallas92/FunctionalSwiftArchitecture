@@ -21,12 +21,6 @@ protocol JokeDetailView : JokesView {
     func drawJoke(joke: JokeViewModel)
 }
 
-func onJokeCategoryClick(categoryName: String) -> Reader<GetCategoriesContext, Void> {
-    return Reader<GetCategoriesContext, Void>.ask.flatMap { context -> Reader<GetCategoriesContext, Void> in
-        context.jokesNavigation.go(categoryName: categoryName)
-    }
-}
-
 func drawCategories(categories:[CategoryViewModel]) -> AsyncResult<GetCategoriesContext, Void> {
     return AsyncResult<GetCategoriesContext, Void>.ask.flatMap { context -> AsyncResult<GetCategoriesContext, Void> in
         context.view.drawCategories(categories: categories)

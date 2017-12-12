@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryListVC: UITableViewController, JokeCategoriesListView{
     
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: JokeDetailVC? = nil
     var categories = [CategoryViewModel]()
     var context:GetCategoriesContext?
 
@@ -19,7 +19,7 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
         super.viewDidLoad()
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? JokeDetailVC
         }
         self.setUpDependencyGraph()
         
@@ -68,11 +68,6 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
         return categories.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        onJokeCategoryClick(categoryName: category.name).run(self.context!)
-    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let category = categories[indexPath.row]

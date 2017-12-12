@@ -38,8 +38,6 @@
 		960989AF1FD82BF30062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
 		96098CBC1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
 		96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CBB1FD845500062ACDC /* JokesUseCases.swift */; };
-		96098CC71FD94A080062ACDC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC61FD94A080062ACDC /* Navigation.swift */; };
-		96098CC81FD94A080062ACDC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC61FD94A080062ACDC /* Navigation.swift */; };
 		96098CCA1FD94D300062ACDC /* JokesPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC91FD94D300062ACDC /* JokesPresentation.swift */; };
 		96098CCB1FD94D300062ACDC /* JokesPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CC91FD94D300062ACDC /* JokesPresentation.swift */; };
 		96098CCE1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96098CCD1FD94DCD0062ACDC /* JokeViewModel.swift */; };
@@ -870,7 +868,6 @@
 		96098C551FD82BF50062ACDC /* gyb.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = gyb.pyc; sourceTree = "<group>"; };
 		96098C561FD82BF50062ACDC /* SwiftCheck.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftCheck.xcarchive; sourceTree = "<group>"; };
 		96098CBB1FD845500062ACDC /* JokesUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUseCases.swift; sourceTree = "<group>"; };
-		96098CC61FD94A080062ACDC /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		96098CC91FD94D300062ACDC /* JokesPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresentation.swift; sourceTree = "<group>"; };
 		96098CCD1FD94DCD0062ACDC /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		96098CD01FD94DD60062ACDC /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -2667,18 +2664,9 @@
 		96098CC41FD949E80062ACDC /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				96098CC51FD949E80062ACDC /* navigation */,
 				96098CC91FD94D300062ACDC /* JokesPresentation.swift */,
 			);
 			path = presentation;
-			sourceTree = "<group>";
-		};
-		96098CC51FD949E80062ACDC /* navigation */ = {
-			isa = PBXGroup;
-			children = (
-				96098CC61FD94A080062ACDC /* Navigation.swift */,
-			);
-			path = navigation;
 			sourceTree = "<group>";
 		};
 		96098CCC1FD94DC40062ACDC /* viewmodel */ = {
@@ -3087,7 +3075,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/FunctionalSwiftArchitectureTests/mocks/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR/FunctionalSwiftArchitecture\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/presentation/JokesPresentation.swift\" \\\n\"$INPUT_DIR/presentation/navigation/Navigation.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/FunctionalSwiftArchitectureTests/mocks/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR/FunctionalSwiftArchitecture\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/presentation/JokesPresentation.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3112,7 +3100,6 @@
 				961C82871FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */,
 				9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */,
-				96098CC71FD94A080062ACDC /* Navigation.swift in Sources */,
 				960989831FD6B6D10062ACDC /* CategoryListVC.swift in Sources */,
 				96098CD11FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				9609899D1FD6E3C80062ACDC /* Category.swift in Sources */,
@@ -3142,7 +3129,6 @@
 				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,
-				96098CC81FD94A080062ACDC /* Navigation.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
 			);

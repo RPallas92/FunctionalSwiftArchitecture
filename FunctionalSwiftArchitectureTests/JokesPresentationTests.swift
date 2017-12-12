@@ -164,19 +164,4 @@ class JokesPresentationTests: XCTestCase {
         })
         wait(for: [expect], timeout: 1.0)
     }
-    
-    func testJokeDetailNavigation(){
-        let jokeCategoriesListView = MockJokeCategoriesListView()
-        let jokesNavigation = MockJokesNavigation()
-        stub(jokesNavigation) { stub in
-            when(stub.go(categoryName: "dev")).thenReturn(Reader<GetCategoriesContext,Void>.pure(()))
-        }
-        
-        let context = GetCategoriesContext(view: jokeCategoriesListView)
-        context.jokesNavigation = jokesNavigation
-        
-        onJokeCategoryClick(categoryName: "dev").run(context)
-        
-        verify(jokesNavigation).go(categoryName: "dev")
-    }
 }
