@@ -12,8 +12,8 @@
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
 		960989511FD5A01B0062ACDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894F1FD5A01B0062ACDC /* LaunchScreen.storyboard */; };
 		960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609896D1FD5B5460062ACDC /* FunctionalKit.framework */; };
-		960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* DetailViewController.swift */; };
-		960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897C1FD6B6D10062ACDC /* MasterViewController.swift */; };
+		960989821FD6B6D10062ACDC /* JokeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897B1FD6B6D10062ACDC /* JokeDetailVC.swift */; };
+		960989831FD6B6D10062ACDC /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609897C1FD6B6D10062ACDC /* CategoryListVC.swift */; };
 		9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */; };
 		9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609898C1FD6BA280062ACDC /* AsyncResult.swift */; };
 		9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609898E1FD6BA610062ACDC /* JokeError.swift */; };
@@ -312,8 +312,8 @@
 		9609896C1FD5B5450062ACDC /* Abstract.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Abstract.framework; path = Carthage/Build/iOS/Abstract.framework; sourceTree = "<group>"; };
 		9609896D1FD5B5460062ACDC /* FunctionalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FunctionalKit.framework; path = Carthage/Build/iOS/FunctionalKit.framework; sourceTree = "<group>"; };
 		9609896E1FD5B5460062ACDC /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/iOS/SwiftCheck.framework; sourceTree = "<group>"; };
-		9609897B1FD6B6D10062ACDC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		9609897C1FD6B6D10062ACDC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		9609897B1FD6B6D10062ACDC /* JokeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeDetailVC.swift; sourceTree = "<group>"; };
+		9609897C1FD6B6D10062ACDC /* CategoryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
 		960989891FD6B9070062ACDC /* JokesNetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesNetworkDataSource.swift; sourceTree = "<group>"; };
 		9609898C1FD6BA280062ACDC /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		9609898E1FD6BA610062ACDC /* JokeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeError.swift; sourceTree = "<group>"; };
@@ -977,8 +977,8 @@
 			isa = PBXGroup;
 			children = (
 				96098CCC1FD94DC40062ACDC /* viewmodel */,
-				9609897B1FD6B6D10062ACDC /* DetailViewController.swift */,
-				9609897C1FD6B6D10062ACDC /* MasterViewController.swift */,
+				9609897B1FD6B6D10062ACDC /* JokeDetailVC.swift */,
+				9609897C1FD6B6D10062ACDC /* CategoryListVC.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3104,7 +3104,7 @@
 				9609898A1FD6B9070062ACDC /* JokesNetworkDataSource.swift in Sources */,
 				9609899F1FD6E4190062ACDC /* JokesRepository.swift in Sources */,
 				960989451FD5A01B0062ACDC /* AppDelegate.swift in Sources */,
-				960989821FD6B6D10062ACDC /* DetailViewController.swift in Sources */,
+				960989821FD6B6D10062ACDC /* JokeDetailVC.swift in Sources */,
 				96098CCE1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				96098CBC1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				960989911FD6BD1A0062ACDC /* JokeContext.swift in Sources */,
@@ -3113,7 +3113,7 @@
 				9609898F1FD6BA610062ACDC /* JokeError.swift in Sources */,
 				9609898D1FD6BA280062ACDC /* AsyncResult.swift in Sources */,
 				96098CC71FD94A080062ACDC /* Navigation.swift in Sources */,
-				960989831FD6B6D10062ACDC /* MasterViewController.swift in Sources */,
+				960989831FD6B6D10062ACDC /* CategoryListVC.swift in Sources */,
 				96098CD11FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				9609899D1FD6E3C80062ACDC /* Category.swift in Sources */,
 			);
