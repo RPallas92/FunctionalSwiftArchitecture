@@ -35,6 +35,7 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
     func setUpDependencyGraph() {
         self.context = GetCategoriesContext(view: self)
     }
+    
     func drawCategories(categories: [CategoryViewModel]) {
         self.categories = categories
         self.tableView.reloadData()
@@ -46,17 +47,17 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
 
     // MARK: - Segues
 
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                let category = categories[indexPath.row]
+                let controller = (segue.destination as! UINavigationController).topViewController as! JokeDetailVC
+                controller.categoryName = category.name
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
-    }*/
+    }
 
     // MARK: - Table View
 

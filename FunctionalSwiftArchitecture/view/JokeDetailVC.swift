@@ -8,32 +8,48 @@
 
 import UIKit
 
-class JokeDetailVC: UIViewController {
-
+class JokeDetailVC: UIViewController, JokeDetailView {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureView()
-    }
-
-
-    var detailItem: NSDate? {
+    var context:GetRandomJokeContext?
+    var categoryName: String? {
         didSet {
-            // Update the view.
+            setUpDependencyGraph()
             configureView()
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpDependencyGraph()
+        configureView()
+    }
+    
+    func setUpDependencyGraph() {
+        if(self.context == nil) {
+            self.context = GetRandomJokeContext(view: self)
+        }
+    }
+
+    func configureView() {
+        if let name = categoryName {
+            getRandomJoke(categoryName: name).runT(context!, {_ in})
+        }
+    }
+    
+    func drawJoke(joke: JokeViewModel) {
+        if let label = detailDescriptionLabel {
+            label.text = joke.value
+        }
+    }
+    
+    func showGenericError() {
+        //TODO
+    }
+
+
+
+
+
 
 
 }
