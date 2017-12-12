@@ -23,7 +23,7 @@ protocol JokeDetailView : JokesView {
 
 func onJokeCategoryClick(categoryName: String) -> Reader<GetCategoriesContext, Void> {
     return Reader<GetCategoriesContext, Void>.ask.flatMap { context -> Reader<GetCategoriesContext, Void> in
-        context.jokesDetailPage.go(cateogryName: categoryName)
+        context.jokesNavigation.go(categoryName: categoryName)
     }
 }
 
