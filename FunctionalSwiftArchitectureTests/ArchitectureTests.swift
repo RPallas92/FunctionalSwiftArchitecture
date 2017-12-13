@@ -11,10 +11,20 @@ import FunctionalKit
 
 class ArchitectureTests: XCTestCase {
     
-    
+
     
     
     func testArchitecture(){
+        
+        func toAsyncResult(results: [AsyncResult<JokeContext, Event>]) -> AsyncResult<JokeContext, [Event]> {
+            return results.reduce(AsyncResult<JokeContext,[Event]>.pureTT([]), { (acc, current) -> AsyncResult<JokeContext,[Event]> in
+                return acc.flatMapTT{ accValue -> AsyncResult<JokeContext, [Event]> in
+                    return current.mapTT { currentValue -> [Event] in
+                        accValue + [currentValue]
+                    }
+                }
+            })
+        }
         
         let expect = expectation(description: "testArchitecture")
         
@@ -28,7 +38,7 @@ class ArchitectureTests: XCTestCase {
             var reducer: (State, Event) -> State
             var uiBindings: (State) -> AsyncResult<AppContext, Void>
             var userActions: () -> AsyncResult<AppContext, Event>
-            var feedback: (State) -> AsyncResult<AppContext, Event>
+            var feedback: [(State) -> AsyncResult<AppContext, Event>]
             
             static func pure(
                 initialState: State,
@@ -36,7 +46,7 @@ class ArchitectureTests: XCTestCase {
                 reducer: @escaping (State, Event) -> State,
                 uiBindings: @escaping (State) -> AsyncResult<AppContext, Void>,
                 userActions: @escaping () -> AsyncResult<AppContext, Event>,
-                feedback: @escaping (State) -> AsyncResult<AppContext, Event>
+                feedback: [(State) -> AsyncResult<AppContext, Event>]
                 ) -> System {
                 
                 return System(initialState: initialState, context: context, reducer: reducer, uiBindings: uiBindings, userActions: userActions, feedback: feedback)
@@ -50,7 +60,16 @@ class ArchitectureTests: XCTestCase {
                 }
                     //Feedback
                     .flatMapTT { state in
-                        self.feedback(state)
+                        let feedbackAsyncResults = self.feedback.map { feedbackFunction in
+                            
+                        }
+                        let feedbackResult = toAsyncResult(results: self.feedback)
+                       // feedbackResult.
+                        
+                        //let feedbackEvents: AsyncResult<AppContext, [Event]>
+                        
+                        //reduce self.feedback (initial value state) then retrun (state) and current value event
+                        self.feedback[0](state)
                             .mapTT { event -> State in
                                 State.reduce(state: state, event: event)
                         }
@@ -123,7 +142,7 @@ class ArchitectureTests: XCTestCase {
         let initialState = State.empty
         let userActions = tapOnLoadCategoriesButton
         let uiBindings = categoriesBinding
-        let feedback = loadCategoriesFeedback
+        let feedback = [loadCategoriesFeedback]
         
         let system = System.pure(
             initialState: initialState,
@@ -151,15 +170,7 @@ class ArchitectureTests: XCTestCase {
             AsyncResult<JokeContext, Int>.pureTT(2)
         ]
         
-        func toAsyncResult(results: [AsyncResult<JokeContext, Int>]) -> AsyncResult<JokeContext, [Int]> {
-            return results.reduce(AsyncResult<JokeContext,[Int]>.pureTT([]), { (acc, current) -> AsyncResult<JokeContext,[Int]> in
-                return acc.flatMapTT{ accValue -> AsyncResult<JokeContext, [Int]> in
-                    return current.mapTT { currentValue -> [Int] in
-                        accValue + [currentValue]
-                    }
-                }
-            })
-        }
+
 
         let finalResult = toAsyncResult(results: asyncResults)
         
