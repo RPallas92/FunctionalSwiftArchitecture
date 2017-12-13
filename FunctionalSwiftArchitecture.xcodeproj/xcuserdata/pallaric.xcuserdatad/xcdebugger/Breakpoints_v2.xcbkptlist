@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534771334.323011"
+            timestampString = "534846463.687905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -26,12 +26,12 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534771334.427039"
+                  timestampString = "534846464.522335"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
                   endingLineNumber = "32"
-                  offsetFromSymbolStart = "112">
+                  offsetFromSymbolStart = "118">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,42 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534771334.428798"
+                  timestampString = "534846464.529175"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "116">
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FunctionalSwiftArchitectureTests.drawJoke(joke: FunctionalSwiftArchitectureTests.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846465.951872"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitectureTests.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitectureTests.drawJoke(joke: FunctionalSwiftArchitectureTests.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846465.9545"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "125">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,13 +88,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534771334.323068"
+            timestampString = "534846463.688074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "drawJoke(joke:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitecture.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitecture.drawJoke(joke: FunctionalSwiftArchitecture.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846464.537689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitectureTests.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitectureTests.drawJoke(joke: FunctionalSwiftArchitectureTests.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846465.958145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "125">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +136,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534771334.323115"
+            timestampString = "534846463.688139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "drawJoke(joke:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitecture.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitecture.drawJoke(joke: FunctionalSwiftArchitecture.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitecture.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitecture.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846464.544708"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FunctionalSwiftArchitectureTests.GetRandomJokeContext) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt; in FunctionalSwiftArchitectureTests.drawJoke(joke: FunctionalSwiftArchitectureTests.JokeViewModel) -&gt; FunctionalKit.Reader&lt;FunctionalSwiftArchitectureTests.GetRandomJokeContext, FunctionalKit.Future&lt;FunctionalKit.Result&lt;FunctionalSwiftArchitectureTests.JokeError, ()&gt;&gt;&gt;"
+                  moduleName = "FunctionalSwiftArchitectureTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
+                  timestampString = "534846465.962506"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "612">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
