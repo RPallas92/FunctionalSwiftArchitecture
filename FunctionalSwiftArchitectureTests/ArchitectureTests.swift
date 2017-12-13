@@ -11,20 +11,7 @@ import FunctionalKit
 
 class ArchitectureTests: XCTestCase {
     
-
-    
-    
     func testArchitecture(){
-        
-        func toAsyncResult(results: [AsyncResult<JokeContext, Event>]) -> AsyncResult<JokeContext, [Event]> {
-            return results.reduce(AsyncResult<JokeContext,[Event]>.pureTT([]), { (acc, current) -> AsyncResult<JokeContext,[Event]> in
-                return acc.flatMapTT{ accValue -> AsyncResult<JokeContext, [Event]> in
-                    return current.mapTT { currentValue -> [Event] in
-                        accValue + [currentValue]
-                    }
-                }
-            })
-        }
         
         let expect = expectation(description: "testArchitecture")
         
@@ -60,19 +47,20 @@ class ArchitectureTests: XCTestCase {
                 }
                     //Feedback
                     .flatMapTT { state in
-                        let feedbackAsyncResults = self.feedback.map { feedbackFunction in
-                            
-                        }
-                        let feedbackResult = toAsyncResult(results: self.feedback)
-                       // feedbackResult.
+                       
+                            let stateAfterFeedback = self.feedback.reduce(
+                                AsyncResult<AppContext, State>.pureTT(state),
+                                { (previousState, feedbackFunction) -> AsyncResult<AppContext, State> in
+                                    previousState.flatMapTT { stateValue -> AsyncResult<AppContext, State> in
+                                        let computedEvent = feedbackFunction(stateValue)
+                                        return computedEvent.mapTT { eventValue in
+                                            State.reduce(state: stateValue, event: eventValue)
+                                        }
+                                    }
+                                }
+                            )
                         
-                        //let feedbackEvents: AsyncResult<AppContext, [Event]>
-                        
-                        //reduce self.feedback (initial value state) then retrun (state) and current value event
-                        self.feedback[0](state)
-                            .mapTT { event -> State in
-                                State.reduce(state: state, event: event)
-                        }
+                      return stateAfterFeedback
                     }
                     //View bindings
                     .flatMapTT { state in
@@ -160,29 +148,5 @@ class ArchitectureTests: XCTestCase {
         
         wait(for: [expect], timeout: 1.0)
     }
-    
-    
-    func testAsyncResultTraverse(){
-        let expect = expectation(description: "testAsyncResultTraverse")
-        
-        let asyncResults = [
-            AsyncResult<JokeContext, Int>.pureTT(1),
-            AsyncResult<JokeContext, Int>.pureTT(2)
-        ]
-        
-
-
-        let finalResult = toAsyncResult(results: asyncResults)
-        
-        finalResult.runT(AppContext(), { result in
-            XCTAssertEqual(result.tryRight!, [1,2])
-            expect.fulfill()
-        })
-        wait(for: [expect], timeout: 1.0)
-
-    }
-    
-    
-    
     
 }
