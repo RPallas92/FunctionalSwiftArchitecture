@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534872691.884004"
+            timestampString = "534875254.038428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -26,7 +26,7 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872691.900218"
+                  timestampString = "534875254.055216"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -41,7 +41,7 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872691.902698"
+                  timestampString = "534875254.058298"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -56,7 +56,7 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872692.661416"
+                  timestampString = "534875254.837751"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -71,7 +71,7 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872692.662953"
+                  timestampString = "534875254.840731"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -88,7 +88,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534872691.884085"
+            timestampString = "534875254.0385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -104,7 +104,7 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872691.945537"
+                  timestampString = "534875254.088418"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -119,7 +119,7 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872692.665152"
+                  timestampString = "534875254.844996"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -136,7 +136,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-            timestampString = "534872691.88414"
+            timestampString = "534875254.03855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -152,7 +152,7 @@
                   moduleName = "FunctionalSwiftArchitecture"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872691.959698"
+                  timestampString = "534875254.126901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -167,7 +167,7 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/presentation/JokesPresentation.swift"
-                  timestampString = "534872692.668838"
+                  timestampString = "534875254.849153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-            timestampString = "534872691.884197"
+            timestampString = "534875254.038602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "categoriesBinding(state:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -200,7 +200,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-            timestampString = "534872691.884542"
+            timestampString = "534875254.038948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-            timestampString = "534872691.884841"
+            timestampString = "534875254.039193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "testArchitecture()"
             landmarkType = "7">
             <Locations>
@@ -232,11 +232,11 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-                  timestampString = "534872692.677281"
+                  timestampString = "534875254.861249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
                   offsetFromSymbolStart = "707">
                </Location>
                <Location
@@ -247,11 +247,11 @@
                   moduleName = "FunctionalSwiftArchitectureTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pallaric/Documents/Mobile/projects/training/FunctionalSwiftArchitecture/FunctionalSwiftArchitecture/FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-                  timestampString = "534872692.679153"
+                  timestampString = "534875254.864253"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
@@ -264,12 +264,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
-            timestampString = "534872691.8851"
+            timestampString = "534875254.039423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "testArchitecture()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
+            timestampString = "534875254.039654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "testAsyncResultTraverse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
+            timestampString = "534875254.039874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "toAsyncResult(results:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionalSwiftArchitectureTests/ArchitectureTests.swift"
+            timestampString = "534875254.040133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "testAsyncResultTraverse()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

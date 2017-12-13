@@ -63,6 +63,7 @@ class ArchitectureTests: XCTestCase {
                 
                 loop.runT(self.context, { stateResult in
                     callback()
+                    //do another loop
                 })
             }
         }
@@ -140,5 +141,37 @@ class ArchitectureTests: XCTestCase {
         
         wait(for: [expect], timeout: 1.0)
     }
+    
+    
+    func testAsyncResultTraverse(){
+        let expect = expectation(description: "testAsyncResultTraverse")
+        
+        let asyncResults = [
+            AsyncResult<JokeContext, Int>.pureTT(1),
+            AsyncResult<JokeContext, Int>.pureTT(2)
+        ]
+        
+        func toAsyncResult(results: [AsyncResult<JokeContext, Int>]) -> AsyncResult<JokeContext, [Int]> {
+            return results.reduce(AsyncResult<JokeContext,[Int]>.pureTT([]), { (acc, current) -> AsyncResult<JokeContext,[Int]> in
+                return acc.flatMapTT{ accValue -> AsyncResult<JokeContext, [Int]> in
+                    return current.mapTT { currentValue -> [Int] in
+                        accValue + [currentValue]
+                    }
+                }
+            })
+        }
+
+        let finalResult = toAsyncResult(results: asyncResults)
+        
+        finalResult.runT(AppContext(), { result in
+            XCTAssertEqual(result.tryRight!, [1,2])
+            expect.fulfill()
+        })
+        wait(for: [expect], timeout: 1.0)
+
+    }
+    
+    
+    
     
 }
