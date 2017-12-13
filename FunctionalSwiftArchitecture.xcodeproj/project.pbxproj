@@ -56,6 +56,7 @@
 		969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 		969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C111FDED19A007F7D97 /* JokesApiTests.swift */; };
 		969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96098C631FD82BF50062ACDC /* Abstract.framework */; };
+		969C8C581FE117A3007F7D97 /* ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C571FE117A3007F7D97 /* ArchitectureTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -883,6 +884,7 @@
 		961C82E61FDDA092003CB298 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		961C82E81FDDA0D4003CB298 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		969C8C111FDED19A007F7D97 /* JokesApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApiTests.swift; sourceTree = "<group>"; };
+		969C8C571FE117A3007F7D97 /* ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -953,6 +955,7 @@
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
 				9609895D1FD5A01B0062ACDC /* Info.plist */,
 				969C8C111FDED19A007F7D97 /* JokesApiTests.swift */,
+				969C8C571FE117A3007F7D97 /* ArchitectureTests.swift */,
 			);
 			path = FunctionalSwiftArchitectureTests;
 			sourceTree = "<group>";
@@ -3128,6 +3131,7 @@
 				969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */,
+				969C8C581FE117A3007F7D97 /* ArchitectureTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
 				96098CCB1FD94D300062ACDC /* JokesPresentation.swift in Sources */,
 				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,

@@ -40,12 +40,5 @@ class JokeDetailVC: UIViewController, JokeDetailView {
     func showGenericError() {
         //TODO
     }
-
-
-
-
-
-
-
 }
 
