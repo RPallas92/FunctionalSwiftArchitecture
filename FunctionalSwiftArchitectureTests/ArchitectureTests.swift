@@ -74,6 +74,14 @@ class ArchitectureTests: XCTestCase {
             }
             
             func onUserAction(event: AsyncResult<AppContext,Event>) {
+                assert(Thread.isMainThread)
+                
+                self.loops.append(doLoop(event))
+                
+                //1. if queue non empty
+                //2. deque
+                //3. doLoop run
+                //go to 1
                 doLoop(event)
                     //IMPURE PART: EXECUTE SIDE EFFECTS
                     .runT(self.context, { stateResult in
@@ -234,7 +242,7 @@ class ArchitectureTests: XCTestCase {
         tapOnLoadCategoriesButton()
         tapOnLoadCategoriesButton()
         
-        wait(for: [expect], timeout: 1.0)
+        wait(for: [expect], timeout: 10.0)
     }
     
 }
