@@ -17,62 +17,89 @@ class ArchitectureTests: XCTestCase {
         
         let context = AppContext()
         
-        struct System {
+        class System {
             static var doNothing = AsyncResult<AppContext,Event>.pureTT(Event.doNothing)
+            
+            var loops = [AsyncResult<AppContext, Void>]()
+            var callback: (() -> ())? = nil
             
             var initialState: State
             var context: AppContext
             var reducer: (State, Event) -> State
             var uiBindings: (State) -> AsyncResult<AppContext, Void>
-            var userActions: () -> AsyncResult<AppContext, Event>
+            var userActions: UserAction
             var feedback: [(State) -> AsyncResult<AppContext, Event>]
             
+            //var actionObserver: (AsyncResult<AppContext, Event>) -> ()
+            
+            private init(
+                initialState: State,
+                context: AppContext,
+                reducer: @escaping (State, Event) -> State,
+                uiBindings: @escaping (State) -> AsyncResult<AppContext, Void>,
+                userActions: UserAction,
+                feedback: [(State) -> AsyncResult<AppContext, Event>]
+                ) {
+                
+                self.initialState = initialState
+                self.context = context
+                self.reducer = reducer
+                self.uiBindings = uiBindings
+                self.userActions = userActions
+                self.feedback = feedback
+            }
             static func pure(
                 initialState: State,
                 context: AppContext,
                 reducer: @escaping (State, Event) -> State,
                 uiBindings: @escaping (State) -> AsyncResult<AppContext, Void>,
-                userActions: @escaping () -> AsyncResult<AppContext, Event>,
+                userActions: UserAction,
                 feedback: [(State) -> AsyncResult<AppContext, Event>]
-                ) -> System {
-                
+            ) -> System {
                 return System(initialState: initialState, context: context, reducer: reducer, uiBindings: uiBindings, userActions: userActions, feedback: feedback)
             }
             
+            func onUserAction(event: AsyncResult<AppContext,Event>) {
+                doLoop(event)
+                    //IMPURE PART: EXECUTE SIDE EFFECTS
+                    .runT(self.context, { stateResult in
+                        if let callback = self.callback {
+                            callback()
+                        }
+                    })
+            }
+            
             func run(callback: @escaping ()->()){
-
-                //User Action
-                let loop = self.userActions().mapTT { event in
-                    State.reduce(state: self.initialState, event: event)
-                }
+                self.callback = callback
+                self.userActions.addListener(system: self)
+            }
+            
+            func doLoop(_ eventResult: AsyncResult<AppContext, Event>) -> AsyncResult<AppContext, Void> {
+                return eventResult
+                    //User action
+                    .mapTT { event in
+                        State.reduce(state: self.initialState, event: event)
+                    }
                     //Feedback
                     .flatMapTT { state in
-                       
-                            let stateAfterFeedback = self.feedback.reduce(
-                                AsyncResult<AppContext, State>.pureTT(state),
-                                { (previousState, feedbackFunction) -> AsyncResult<AppContext, State> in
-                                    previousState.flatMapTT { stateValue -> AsyncResult<AppContext, State> in
-                                        let computedEvent = feedbackFunction(stateValue)
-                                        return computedEvent.mapTT { eventValue in
-                                            State.reduce(state: stateValue, event: eventValue)
-                                        }
+                        let stateAfterFeedback = self.feedback.reduce(
+                            AsyncResult<AppContext, State>.pureTT(state),
+                            { (previousState, feedbackFunction) -> AsyncResult<AppContext, State> in
+                                previousState.flatMapTT { stateValue -> AsyncResult<AppContext, State> in
+                                    let computedEvent = feedbackFunction(stateValue)
+                                    return computedEvent.mapTT { eventValue in
+                                        State.reduce(state: stateValue, event: eventValue)
                                     }
                                 }
-                            )
-                        
-                      return stateAfterFeedback
+                        })
+                        return stateAfterFeedback
                     }
                     //View bindings
                     .flatMapTT { state in
                         self.uiBindings(state)
-                }
-                
-                
-                loop.runT(self.context, { stateResult in
-                    callback()
-                    //do another loop
-                })
+                    }
             }
+            
         }
         
         enum Event {
@@ -105,8 +132,39 @@ class ArchitectureTests: XCTestCase {
         }
         
         
-        func tapOnLoadCategoriesButton() -> AsyncResult<AppContext, Event> {
-            return AsyncResult<AppContext, Event>.pureTT(Event.loadCategories)
+   
+        
+        class UserAction {
+            let asyncResult = AsyncResult<AppContext, Event>.pureTT(Event.loadCategories)
+            var listeners = [System]()
+            
+            init() {
+            }
+            func execute(value: Int) {
+                let action = AsyncResult<AppContext, Int>.pureTT(5).mapTT { number -> Event in
+                    print("UserAction executed with value: " + String(value))
+                    return Event.loadCategories
+                }
+                
+                notify(action)
+            }
+            
+            
+            func addListener(system: System) {
+                listeners.append(system)
+            }
+            
+            func notify(_ action: AsyncResult<AppContext, Event>) {
+                listeners.forEach { system in
+                    system.onUserAction(event: action)
+                }
+            }
+        }
+        
+        let tapUserAction = UserAction()
+        
+        func tapOnLoadCategoriesButton() {
+            tapUserAction.execute(value: 5)
         }
         
         func categoriesBinding(state: State) -> AsyncResult<AppContext, Void> {
@@ -128,7 +186,7 @@ class ArchitectureTests: XCTestCase {
         }
         
         let initialState = State.empty
-        let userActions = tapOnLoadCategoriesButton
+        let userActions = tapUserAction
         let uiBindings = categoriesBinding
         let feedback = [loadCategoriesFeedback]
         
@@ -141,10 +199,13 @@ class ArchitectureTests: XCTestCase {
             feedback: feedback
         )
         
-        
         system.run {
             expect.fulfill()
         }
+        
+        //Simulate user interaction
+        tapOnLoadCategoriesButton()
+        
         
         wait(for: [expect], timeout: 1.0)
     }
