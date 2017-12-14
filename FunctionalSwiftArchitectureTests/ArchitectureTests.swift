@@ -9,7 +9,21 @@
 import XCTest
 import FunctionalKit
 
+fileprivate typealias Function = () -> ()
+fileprivate typealias Completable = (@escaping Function) -> ()
+
+fileprivate func runInBackground(_ asyncCode: @escaping(@escaping Completable)->()) {
+    DispatchQueue.global(qos: .background).async {
+        asyncCode { inMainThread in
+            DispatchQueue.main.async {
+                inMainThread()
+            }
+        }
+    }
+}
+
 class ArchitectureTests: XCTestCase {
+    
     
     func testArchitecture(){
         
@@ -175,11 +189,23 @@ class ArchitectureTests: XCTestCase {
         }
         
         func loadCategoriesFeedback(state: State) -> AsyncResult<AppContext, Event> {
+            
             if(state.shouldLoadData){
                 let categories = [
                     CategoryViewModel(name: "dev")
                 ]
-                return AsyncResult<AppContext,Event>.pureTT(Event.categoriesLoaded(Result.success(categories)))
+                
+                return AsyncResult<AppContext, Event>.unfold { _ in
+                    return Future.unfold { continuation in
+                        
+                        runInBackground { runInUI in
+                            let result = Result<JokeError, Event>.success(Event.categoriesLoaded(Result.success(categories)))
+                            runInUI {
+                                continuation(result)
+                            }
+                        }
+                    }
+                }
             } else {
                 return System.doNothing
             }
@@ -205,7 +231,7 @@ class ArchitectureTests: XCTestCase {
         
         //Simulate user interaction
         tapOnLoadCategoriesButton()
-        
+        tapOnLoadCategoriesButton()
         
         wait(for: [expect], timeout: 1.0)
     }
