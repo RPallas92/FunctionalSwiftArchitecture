@@ -41,6 +41,13 @@ class ArchitectureTests: XCTestCase {
             }
         }
         
+        func dummyBinding(state: State) -> AsyncResult<AppContext, Void> {
+            return AsyncResult<AppContext, Void>.ask.flatMap { context -> AsyncResult<AppContext, Void> in
+                print("Dummy binding")
+                return AsyncResult<AppContext, Void>.pureTT(())
+            }
+        }
+        
         func loadCategoriesFeedback(state: State) -> AsyncResult<AppContext, Event> {
             
             if(state.shouldLoadData){
@@ -65,7 +72,7 @@ class ArchitectureTests: XCTestCase {
         }
         
         let initialState = State.empty
-        let uiBindings = categoriesBinding
+        let uiBindings = [categoriesBinding, dummyBinding]
         let feedback = [loadCategoriesFeedback]
         
         let system = System.pure(
@@ -73,7 +80,7 @@ class ArchitectureTests: XCTestCase {
             context: context,
             reducer: State.reduce,
             uiBindings: uiBindings,
-            userActions: button.onTap(),
+            userActions: [button.onTap()],
             feedback: feedback
         )
         
@@ -86,5 +93,4 @@ class ArchitectureTests: XCTestCase {
         
         wait(for: [expect], timeout: 10.0)
     }
-    
 }

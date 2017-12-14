@@ -18,16 +18,16 @@ class System {
     var initialState: State
     var context: AppContext
     var reducer: (State, Event) -> State
-    var uiBindings: (State) -> AsyncResult<AppContext, Void>
-    var userActions: UserAction
+    var uiBindings: [(State) -> AsyncResult<AppContext, Void>]
+    var userActions: [UserAction]
     var feedback: [(State) -> AsyncResult<AppContext, Event>]
     
     private init(
         initialState: State,
         context: AppContext,
         reducer: @escaping (State, Event) -> State,
-        uiBindings: @escaping (State) -> AsyncResult<AppContext, Void>,
-        userActions: UserAction,
+        uiBindings: [(State) -> AsyncResult<AppContext, Void>],
+        userActions: [UserAction],
         feedback: [(State) -> AsyncResult<AppContext, Event>]
         ) {
         
@@ -42,8 +42,8 @@ class System {
         initialState: State,
         context: AppContext,
         reducer: @escaping (State, Event) -> State,
-        uiBindings: @escaping (State) -> AsyncResult<AppContext, Void>,
-        userActions: UserAction,
+        uiBindings: [(State) -> AsyncResult<AppContext, Void>],
+        userActions: [UserAction],
         feedback: [(State) -> AsyncResult<AppContext, Event>]
         ) -> System {
         return System(initialState: initialState, context: context, reducer: reducer, uiBindings: uiBindings, userActions: userActions, feedback: feedback)
@@ -75,13 +75,13 @@ class System {
                     }
                 })
         }
-        
-        
     }
     
     func run(callback: @escaping ()->()){
         self.callback = callback
-        self.userActions.addListener(system: self)
+        self.userActions.forEach { action in
+            action.addListener(system: self)
+        }
     }
     
     func doLoop(_ eventResult: AsyncResult<AppContext, Event>) -> AsyncResult<AppContext, Void> {
@@ -106,8 +106,15 @@ class System {
             }
             //View bindings
             .flatMapTT { state in
-                self.uiBindings(state)
-        }
-    }
+                self.uiBindings.reduce(
+                    AsyncResult<AppContext, Void>.pureTT(()),
+                    { (previousAsyncResult, currentUiBinding) -> AsyncResult<AppContext, Void> in
+                        previousAsyncResult.flatMapTT { void in
+                            return currentUiBinding(state)
+                        }
+                    }
+                )
     
+            }
+    }
 }
