@@ -82,7 +82,7 @@ class ArchitectureTests: XCTestCase {
         }
         
         //Simulate user interaction - Tap button
-        //UIButton.buttonTapped(button)
+        button.sendActions(for: .touchUpInside)
         
         wait(for: [expect], timeout: 10.0)
     }
