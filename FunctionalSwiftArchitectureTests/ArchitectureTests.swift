@@ -34,7 +34,7 @@ class ArchitectureTests: XCTestCase {
         class System {
             static var doNothing = AsyncResult<AppContext,Event>.pureTT(Event.doNothing)
             
-            var loops = [AsyncResult<AppContext, Void>]()
+            var eventQueue = [AsyncResult<AppContext,Event>]()
             var callback: (() -> ())? = nil
             
             var initialState: State
@@ -73,23 +73,34 @@ class ArchitectureTests: XCTestCase {
                 return System(initialState: initialState, context: context, reducer: reducer, uiBindings: uiBindings, userActions: userActions, feedback: feedback)
             }
             
+            var actionExecuting = false
             func onUserAction(event: AsyncResult<AppContext,Event>) {
                 assert(Thread.isMainThread)
+                if(actionExecuting){
+                    self.eventQueue.append(event)
+                } else {
+                    actionExecuting = true
+                    
+                    //1. if queue non empty
+                    //2. deque
+                    //3. doLoop run
+                    //go to 1
+                    doLoop(event)
+                        //IMPURE PART: EXECUTE SIDE EFFECTS
+                        .runT(self.context, { stateResult in
+                            assert(Thread.isMainThread, "ArchitectureKit: Final callback must be run on main thread")
+                            if let callback = self.callback {
+                                callback()
+                                self.actionExecuting = false
+                                if let nextEvent = self.eventQueue.first {
+                                    self.eventQueue.removeFirst()
+                                    self.onUserAction(event: nextEvent)
+                                }
+                            }
+                        })
+                }
                 
-                self.loops.append(doLoop(event))
-                
-                //1. if queue non empty
-                //2. deque
-                //3. doLoop run
-                //go to 1
-                doLoop(event)
-                    //IMPURE PART: EXECUTE SIDE EFFECTS
-                    .runT(self.context, { stateResult in
-                        assert(Thread.isMainThread, "ArchitectureKit: Final callback must be run on main thread")
-                        if let callback = self.callback {
-                            callback()
-                        }
-                    })
+
             }
             
             func run(callback: @escaping ()->()){
