@@ -57,6 +57,11 @@
 		969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C111FDED19A007F7D97 /* JokesApiTests.swift */; };
 		969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96098C631FD82BF50062ACDC /* Abstract.framework */; };
 		969C8C581FE117A3007F7D97 /* ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C571FE117A3007F7D97 /* ArchitectureTests.swift */; };
+		969C8C5B1FE2B626007F7D97 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C5A1FE2B626007F7D97 /* UserAction.swift */; };
+		969C8C5D1FE2B65B007F7D97 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C5C1FE2B65B007F7D97 /* Event.swift */; };
+		969C8C5F1FE2B680007F7D97 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C5E1FE2B680007F7D97 /* State.swift */; };
+		969C8C611FE2B6A7007F7D97 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C601FE2B6A7007F7D97 /* System.swift */; };
+		969C8C631FE2B6E6007F7D97 /* UIButton+ArchitectureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C621FE2B6E6007F7D97 /* UIButton+ArchitectureExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -885,6 +890,11 @@
 		961C82E81FDDA0D4003CB298 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		969C8C111FDED19A007F7D97 /* JokesApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesApiTests.swift; sourceTree = "<group>"; };
 		969C8C571FE117A3007F7D97 /* ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureTests.swift; sourceTree = "<group>"; };
+		969C8C5A1FE2B626007F7D97 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
+		969C8C5C1FE2B65B007F7D97 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		969C8C5E1FE2B680007F7D97 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		969C8C601FE2B6A7007F7D97 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		969C8C621FE2B6E6007F7D97 /* UIButton+ArchitectureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ArchitectureExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -950,6 +960,7 @@
 		9609895A1FD5A01B0062ACDC /* FunctionalSwiftArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
+				969C8C591FE2B615007F7D97 /* architecture */,
 				969C8C551FDEE8F2007F7D97 /* mocks */,
 				96098CD31FDA9A760062ACDC /* AsyncResultTests.swift */,
 				961C82561FDABE72003CB298 /* JokesPresentationTests.swift */,
@@ -2700,6 +2711,18 @@
 			path = mocks;
 			sourceTree = "<group>";
 		};
+		969C8C591FE2B615007F7D97 /* architecture */ = {
+			isa = PBXGroup;
+			children = (
+				969C8C5A1FE2B626007F7D97 /* UserAction.swift */,
+				969C8C5C1FE2B65B007F7D97 /* Event.swift */,
+				969C8C5E1FE2B680007F7D97 /* State.swift */,
+				969C8C601FE2B6A7007F7D97 /* System.swift */,
+				969C8C621FE2B6E6007F7D97 /* UIButton+ArchitectureExtensions.swift */,
+			);
+			path = architecture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3119,10 +3142,12 @@
 			files = (
 				960989AD1FD82B0F0062ACDC /* JokesRepository.swift in Sources */,
 				960989A81FD82A700062ACDC /* AsyncResult.swift in Sources */,
+				969C8C611FE2B6A7007F7D97 /* System.swift in Sources */,
 				960989A41FD82A3C0062ACDC /* JokesNetworkDataSource.swift in Sources */,
 				969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */,
 				960989A91FD82A880062ACDC /* JokeContext.swift in Sources */,
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
+				969C8C631FE2B6E6007F7D97 /* UIButton+ArchitectureExtensions.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */,
 				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
@@ -3133,12 +3158,15 @@
 				961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */,
 				969C8C581FE117A3007F7D97 /* ArchitectureTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
+				969C8C5D1FE2B65B007F7D97 /* Event.swift in Sources */,
 				96098CCB1FD94D300062ACDC /* JokesPresentation.swift in Sources */,
 				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
+				969C8C5F1FE2B680007F7D97 /* State.swift in Sources */,
+				969C8C5B1FE2B626007F7D97 /* UserAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
