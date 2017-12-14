@@ -84,6 +84,12 @@ class System {
         }
     }
     
+    func run() {
+        self.userActions.forEach { action in
+            action.addListener(system: self)
+        }
+    }
+    
     func doLoop(_ eventResult: AsyncResult<AppContext, Event>) -> AsyncResult<AppContext, Void> {
         return eventResult
             //User action

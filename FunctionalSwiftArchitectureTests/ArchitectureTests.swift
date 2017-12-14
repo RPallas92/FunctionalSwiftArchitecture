@@ -84,9 +84,9 @@ class ArchitectureTests: XCTestCase {
             feedback: feedback
         )
         
-        system.run {
+        system.run( {
             expect.fulfill()
-        }
+        })
         
         //Simulate user interaction - Tap button
         button.sendActions(for: .touchUpInside)
