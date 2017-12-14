@@ -133,7 +133,7 @@ class JokesPresentationTests: XCTestCase {
             verify(jokeDetailView).drawJoke(joke: self.jokeMatcher)
             expect.fulfill()
         })
-        wait(for: [expect], timeout: 1.0)
+        wait(for: [expect], timeout: 10.0)
     }
     
     func testGetRandomJokeError(){

@@ -9,7 +9,7 @@ import Abstract
 // sourcery: monad
 // sourcery: concrete = "Future"
 // sourcery: escapingHOF
-public protocol FutureType: TypeConstructor {
+public protocol FutureType: PureConstructible {
 	static func from(concrete: Concrete<ParameterType>) -> Self
 	func run (_ callback: @escaping (ParameterType) -> ())
 	static func unfold(_ continuation: @escaping (@escaping (ParameterType) -> ()) -> ()) -> Self
@@ -46,11 +46,11 @@ public final class Future<A>: FutureType {
 	public func start() -> Future<A> {
 		guard case .idle = currentState else { return self }
 		currentState = .running
-		continuation(weakly(self) { this, value in
-			this.currentState = .done(value)
-			this.callbacks.forEach { $0(value) }
-			this.callbacks.removeAll()
-		})
+		continuation { value in
+			self.currentState = .done(value)
+			self.callbacks.forEach { $0(value) }
+			self.callbacks.removeAll()
+		}
 		return self
 	}
 

@@ -18,7 +18,7 @@ extension AsyncResult where ParameterType: FutureType, ParameterType.ParameterTy
     func runT<H>(_ environment:EnvironmentType, _ callback: @escaping (Result<JokeError, H>) -> ()) where ValueType == H {
         let future = self.run(environment)
         future.run { result in
-            let _ = future //HACK
+            //let _ = future //HACK
             result.fold(
                 onSuccess: { callback(Result.success($0))},
                 onFailure: { callback(Result.failure($0))}

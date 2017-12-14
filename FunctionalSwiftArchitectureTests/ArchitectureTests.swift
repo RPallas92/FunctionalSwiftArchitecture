@@ -77,6 +77,7 @@ class ArchitectureTests: XCTestCase {
                 doLoop(event)
                     //IMPURE PART: EXECUTE SIDE EFFECTS
                     .runT(self.context, { stateResult in
+                        assert(Thread.isMainThread, "ArchitectureKit: Final callback must be run on main thread")
                         if let callback = self.callback {
                             callback()
                         }
