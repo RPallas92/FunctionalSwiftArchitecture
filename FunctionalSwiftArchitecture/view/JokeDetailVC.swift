@@ -27,7 +27,7 @@ class JokeDetailVC: UIViewController, JokeDetailView {
 
     func configureView() {
         if let name = categoryName {
-            getRandomJoke(categoryName: name).runT(context!, {_ in})
+            onJokeViewLoaded(context: self.context!, withCategoryName: name)
         }
     }
     
@@ -38,14 +38,9 @@ class JokeDetailVC: UIViewController, JokeDetailView {
     }
     
     func showGenericError() {
-        //TODO
+        let alert = UIAlertController(title: "Error", message: "Error, please try again.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
-
-
-
-
-
-
-
 }
 
