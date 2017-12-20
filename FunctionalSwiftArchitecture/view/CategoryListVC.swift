@@ -24,7 +24,7 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
         self.setUpDependencyGraph()
         
         //Execute presentation logic - run side effects
-        getCategories().runT(context!, { _ in })
+        onCategoriesViewLoaded(context: context!)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +42,9 @@ class CategoryListVC: UITableViewController, JokeCategoriesListView{
     }
     
     func showGenericError() {
-        //TODO
+        let alert = UIAlertController(title: "Error", message: "Error, please try again.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Segues
