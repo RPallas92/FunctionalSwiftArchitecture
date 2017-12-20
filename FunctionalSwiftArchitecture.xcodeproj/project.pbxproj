@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96082B951FEA7AAB00A8A9EF /* ArchitectureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96082B941FEA7AAB00A8A9EF /* ArchitectureKit.framework */; };
 		960989451FD5A01B0062ACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960989441FD5A01B0062ACDC /* AppDelegate.swift */; };
 		9609894C1FD5A01B0062ACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9609894A1FD5A01B0062ACDC /* Main.storyboard */; };
 		9609894E1FD5A01B0062ACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9609894D1FD5A01B0062ACDC /* Assets.xcassets */; };
@@ -300,6 +301,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		96082B941FEA7AAB00A8A9EF /* ArchitectureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArchitectureKit.framework; path = Carthage/Build/iOS/ArchitectureKit.framework; sourceTree = "<group>"; };
 		960989411FD5A01B0062ACDC /* FunctionalSwiftArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalSwiftArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960989441FD5A01B0062ACDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9609894B1FD5A01B0062ACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -890,6 +892,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96082B951FEA7AAB00A8A9EF /* ArchitectureKit.framework in Frameworks */,
 				969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */,
 				960989751FD6AFD70062ACDC /* FunctionalKit.framework in Frameworks */,
 			);
@@ -960,6 +963,7 @@
 		9609896B1FD5B5450062ACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96082B941FEA7AAB00A8A9EF /* ArchitectureKit.framework */,
 				961C82E81FDDA0D4003CB298 /* Result.framework */,
 				961C82E61FDDA092003CB298 /* Alamofire.framework */,
 				961C82AF1FDD90C6003CB298 /* Moya.framework */,
@@ -3057,11 +3061,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/FunctionalKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Abstract.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ArchitectureKit.framework",
 			);
 			name = "Run Script - Carthage";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FunctionalKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Abstract.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ArchitectureKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

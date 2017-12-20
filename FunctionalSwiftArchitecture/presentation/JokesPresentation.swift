@@ -8,6 +8,7 @@
 
 import Foundation
 import FunctionalKit
+import ArchitectureKit
 
 protocol JokesView {
     func showGenericError()
@@ -19,6 +20,56 @@ protocol JokeCategoriesListView : JokesView {
 
 protocol JokeDetailView : JokesView {
     func drawJoke(joke: JokeViewModel)
+}
+
+
+func runCategoriesListSystem() {
+    
+    enum Event {
+        case loadCategories
+        case categoriesLoaded(Result<JokeError, [CategoryViewModel]>)
+    }
+    
+    struct State {
+        var categories: [CategoryViewModel]
+        var shouldLoadData = false
+        static var empty = State(categories: [], shouldLoadData: false)
+        
+        static func reduce(state: State, event: Event) -> State {
+            switch event {
+            case .loadCategories:
+                var newState = state
+                newState.shouldLoadData = true
+                newState.categories = []
+                return newState
+            case .categoriesLoaded(let categoriesResult):
+                var newState = state
+                newState.shouldLoadData = false
+                newState.categories = categoriesResult.tryRight!
+                return newState
+            }
+        }
+    }
+    
+    let uiBinding: (State) -> () = { state in
+        
+    }
+    
+    typealias CategoriesUserAction = UserAction<State, Event, JokeError, GetCategoriesContext>
+    typealias CategoriesFeedback = Feedback<State, Event, JokeError, GetCategoriesContext>
+    
+    let screenLoadedAction = CategoriesUserAction(from: Event.loadCategories)
+    
+    let feedback = CategoriesFeedback
+    
+    System.pure(
+        initialState: State.empty,
+        context: GetCategoriesContext,
+        reducer: State.reduce,
+        uiBindings: [uiBinding],
+        userActions: [screenLoadedAction],
+        feedback: <#T##[Feedback<_, _, _, _>]#>
+    )
 }
 
 func drawCategories(categories:[CategoryViewModel]) -> AsyncResult<GetCategoriesContext, Void> {
