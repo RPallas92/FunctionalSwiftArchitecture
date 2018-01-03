@@ -61,6 +61,13 @@
 		961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82861FDC2582003CB298 /* JokesDataSource.swift */; };
 		961C82E01FDD9428003CB298 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 		961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82E21FDD9F0D003CB298 /* JokesInMemoryDataSource.swift */; };
+		969025B31FFD5C990071A00B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082B9B1FEAADFE00A8A9EF /* View.swift */; };
+		969025D31FFD5D210071A00B /* Categories+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082B9D1FEAAE4500A8A9EF /* Categories+Feedback.swift */; };
+		969025D41FFD5D240071A00B /* Categories+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082B9F1FEAAE4F00A8A9EF /* Categories+State.swift */; };
+		969025D51FFD5D270071A00B /* JokeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082BA11FEAAF3B00A8A9EF /* JokeDetail.swift */; };
+		969025D61FFD5D290071A00B /* JokeDetail+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082BA31FEAAF5100A8A9EF /* JokeDetail+State.swift */; };
+		969025D71FFD5D2C0071A00B /* JokeDetail+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082BA51FEAAF6000A8A9EF /* JokeDetail+Feedback.swift */; };
+		969025D81FFD5D4A0071A00B /* ViewModelMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082B991FEAAD9000A8A9EF /* ViewModelMappers.swift */; };
 		969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C82DF1FDD9428003CB298 /* JokesApi.swift */; };
 		969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C8C111FDED19A007F7D97 /* JokesApiTests.swift */; };
 		969C8C561FDFF341007F7D97 /* Abstract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96098C631FD82BF50062ACDC /* Abstract.framework */; };
@@ -3173,25 +3180,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				960989AD1FD82B0F0062ACDC /* JokesRepository.swift in Sources */,
+				969025D81FFD5D4A0071A00B /* ViewModelMappers.swift in Sources */,
 				960989A81FD82A700062ACDC /* AsyncResult.swift in Sources */,
 				960989A41FD82A3C0062ACDC /* JokesNetworkDataSource.swift in Sources */,
 				969C8BEF1FDED0B1007F7D97 /* JokesApi.swift in Sources */,
 				960989A91FD82A880062ACDC /* JokeContext.swift in Sources */,
+				969025D61FFD5D290071A00B /* JokeDetail+State.swift in Sources */,
 				960989A71FD82A6B0062ACDC /* CategoryDto.swift in Sources */,
+				969025D31FFD5D210071A00B /* Categories+Feedback.swift in Sources */,
 				960989A61FD82A680062ACDC /* JokeDto.swift in Sources */,
 				961C82E41FDD9F0D003CB298 /* JokesInMemoryDataSource.swift in Sources */,
+				969025D71FFD5D2C0071A00B /* JokeDetail+Feedback.swift in Sources */,
 				961C82801FDAE2D0003CB298 /* GeneratedMocks.swift in Sources */,
 				960989AB1FD82A8E0062ACDC /* Joke.swift in Sources */,
+				969025D41FFD5D240071A00B /* Categories+State.swift in Sources */,
 				96098CD51FDA9A760062ACDC /* AsyncResultTests.swift in Sources */,
 				969C8C121FDED19A007F7D97 /* JokesApiTests.swift in Sources */,
 				96098CCF1FD94DCD0062ACDC /* JokeViewModel.swift in Sources */,
 				961C82571FDABE72003CB298 /* JokesPresentationTests.swift in Sources */,
 				960989AA1FD82A8C0062ACDC /* JokeError.swift in Sources */,
 				96098CCB1FD94D300062ACDC /* Categories.swift in Sources */,
+				969025D51FFD5D270071A00B /* JokeDetail.swift in Sources */,
 				961C82881FDC2582003CB298 /* JokesDataSource.swift in Sources */,
 				960989A51FD82A650062ACDC /* DataMappers.swift in Sources */,
 				96098CBD1FD845500062ACDC /* JokesUseCases.swift in Sources */,
 				96098CD21FD94DD60062ACDC /* CategoryViewModel.swift in Sources */,
+				969025B31FFD5C990071A00B /* View.swift in Sources */,
 				960989AC1FD82A920062ACDC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

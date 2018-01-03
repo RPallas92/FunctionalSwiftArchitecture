@@ -123,7 +123,7 @@ class JokesPresentationTests: XCTestCase {
         let context = GetRandomJokeContext(view: jokeDetailView)
         context.jokesDataSource = JokesInMemoryDataSource()
 
-        let jokeAsyncResult = getRandomJoke(categoryName: "dev")
+        let jokeAsyncResult = getRandomJoke(forCategoryName: "dev")
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
@@ -148,7 +148,7 @@ class JokesPresentationTests: XCTestCase {
         let context = GetRandomJokeContext(view: jokeDetailView)
         context.jokesDataSource = ErrorJokesDataSource()
         
-        let jokeAsyncResult = getRandomJoke(categoryName: "dev")
+        let jokeAsyncResult = getRandomJoke(forCategoryName: "dev")
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
