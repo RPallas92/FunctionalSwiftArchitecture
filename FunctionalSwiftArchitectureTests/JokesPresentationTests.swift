@@ -56,7 +56,7 @@ class JokesPresentationTests: XCTestCase {
      */
     func testGetCategories() {
         let expect = expectation(description: "testHandleErrorWith")
-
+        
         let categoriesListView = MockJokeCategoriesListView()
         stub(categoriesListView) { stub in
             when(stub.drawCategories(categories: self.categoriesMatcher)).thenDoNothing()
@@ -64,18 +64,36 @@ class JokesPresentationTests: XCTestCase {
         
         let context = GetCategoriesContext(view: categoriesListView)
         context.jokesDataSource = JokesInMemoryDataSource()
-
-        let categoriesAsyncResult = getCategories()
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(categoriesListView, never()).drawCategories(categories: self.categoriesMatcher)
         
-        categoriesAsyncResult.runT(context, { result in
+        let uiBinding: (CategoriesState) -> () = { state in
+            if let _ = state.error {
+                context.view.showGenericError()
+            } else {
+                context.view.drawCategories(categories: state.categories)
+            }
+        }
+        
+        let screenLoadedAction = CategoriesUserAction(trigger: CategoriesEvent.loadCategories)
+        
+        let system = CategoriesSystem.pure(
+            initialState: CategoriesState.empty,
+            context: context,
+            reducer: CategoriesState.reduce,
+            uiBindings: [uiBinding],
+            userActions: [screenLoadedAction],
+            feedback: [CategoriesFeedback.react({_ in getCategories()}, when: { $0.shouldLoadCategories})]
+        )
+        
+        system.addLoopCallback {
             //Verify it was called with correct categories.
             verify(categoriesListView).drawCategories(categories: self.categoriesMatcher)
             expect.fulfill()
-        })
+        }
         
+        screenLoadedAction.execute()
         wait(for: [expect], timeout: 1.0)
     }
     
@@ -91,24 +109,41 @@ class JokesPresentationTests: XCTestCase {
             when(stub.drawCategories(categories: self.categoriesMatcher)).thenDoNothing()
         }
         
-        
         let context = GetCategoriesContext(view: categoriesListView)
         context.jokesDataSource = ErrorJokesDataSource()
-
-        let categoriesAsyncResult = getCategories()
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(categoriesListView, never()).drawCategories(categories: self.categoriesMatcher)
         verify(categoriesListView, never()).showGenericError()
-
-        categoriesAsyncResult.runT(context, { result in
+        
+        let uiBinding: (CategoriesState) -> () = { state in
+            if let _ = state.error {
+                context.view.showGenericError()
+            } else {
+                context.view.drawCategories(categories: state.categories)
+            }
+        }
+        
+        let screenLoadedAction = CategoriesUserAction(trigger: CategoriesEvent.loadCategories)
+        
+        let system = CategoriesSystem.pure(
+            initialState: CategoriesState.empty,
+            context: context,
+            reducer: CategoriesState.reduce,
+            uiBindings: [uiBinding],
+            userActions: [screenLoadedAction],
+            feedback: [CategoriesFeedback.react({_ in getCategories()}, when: { $0.shouldLoadCategories})]
+        )
+        
+        system.addLoopCallback {
             //Verify it was not called
             verify(categoriesListView, never()).drawCategories(categories: self.categoriesMatcher)
             //Verify it was called once
             verify(categoriesListView).showGenericError()
             expect.fulfill()
-        })
+        }
         
+        screenLoadedAction.execute()
         wait(for: [expect], timeout: 1.0)
     }
     
@@ -122,17 +157,38 @@ class JokesPresentationTests: XCTestCase {
         
         let context = GetRandomJokeContext(view: jokeDetailView)
         context.jokesDataSource = JokesInMemoryDataSource()
-
-        let jokeAsyncResult = getRandomJoke(forCategoryName: "dev")
         
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
         
-        jokeAsyncResult.runT(context, { result in
+        let uiBinding: (JokeState) -> () = { state in
+            if let _ = state.error {
+                context.view.showGenericError()
+            } else if let joke = state.joke {
+                context.view.drawJoke(joke: joke)
+            }
+        }
+        
+        let screenLoadedAction = JokeUserAction(trigger: JokeEvent.loadJoke)
+        let categoryName = "dev"
+        
+        let system = JokeSystem.pure(
+            initialState: JokeState.empty(categoryName),
+            context: context,
+            reducer: JokeState.reduce,
+            uiBindings: [uiBinding],
+            userActions: [screenLoadedAction],
+            feedback: [JokeFeedback.react({ getRandomJoke(forCategoryName: $0.categoryName)}, when: { $0.shouldLoadJoke})]
+        )
+        
+        system.addLoopCallback {
             //Verify it was called with correct joke.
             verify(jokeDetailView).drawJoke(joke: self.jokeMatcher)
             expect.fulfill()
-        })
+        }
+        
+        screenLoadedAction.execute()
+        
         wait(for: [expect], timeout: 1.0)
     }
     
@@ -148,20 +204,40 @@ class JokesPresentationTests: XCTestCase {
         let context = GetRandomJokeContext(view: jokeDetailView)
         context.jokesDataSource = ErrorJokesDataSource()
         
-        let jokeAsyncResult = getRandomJoke(forCategoryName: "dev")
-        
         //Verify not called here (otherwise that would mean side effects were executed before actually running the monad).
         verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
         verify(jokeDetailView, never()).showGenericError()
-
-        jokeAsyncResult.runT(context, { result in
+        
+        let uiBinding: (JokeState) -> () = { state in
+            if let _ = state.error {
+                context.view.showGenericError()
+            } else if let joke = state.joke {
+                context.view.drawJoke(joke: joke)
+            }
+        }
+        
+        let screenLoadedAction = JokeUserAction(trigger: JokeEvent.loadJoke)
+        let categoryName = "dev"
+        
+        let system = JokeSystem.pure(
+            initialState: JokeState.empty(categoryName),
+            context: context,
+            reducer: JokeState.reduce,
+            uiBindings: [uiBinding],
+            userActions: [screenLoadedAction],
+            feedback: [JokeFeedback.react({ getRandomJoke(forCategoryName: $0.categoryName)}, when: { $0.shouldLoadJoke})]
+        )
+        
+        system.addLoopCallback {
             //Verify it was not called
             verify(jokeDetailView, never()).drawJoke(joke: self.jokeMatcher)
             //Verify it was called once
             verify(jokeDetailView).showGenericError()
             
             expect.fulfill()
-        })
+        }
+        
+        screenLoadedAction.execute()
         wait(for: [expect], timeout: 1.0)
     }
 }

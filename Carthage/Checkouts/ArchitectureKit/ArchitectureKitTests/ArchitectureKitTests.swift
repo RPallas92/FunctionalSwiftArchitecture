@@ -60,11 +60,11 @@ struct State {
 
 class ArchitectureKitTests: XCTestCase {
     
-    //TODO  CONTEXT
-
     func testArchitecture(){
         
         let expect = expectation(description: "testArchitecture")
+        
+        typealias TestSystem = System<State,Event,SystemError, AppContext>
         
         let context = AppContext()
         let button = UIButton()
@@ -81,7 +81,8 @@ class ArchitectureKitTests: XCTestCase {
             let categories = ["dev"]
             return AsyncResult<AppContext, Event, SystemError>.unfoldTT { _, continuation in
                 runInBackground { runInUI in
-                    let result = Result<SystemError, Event>.success(Event.categoriesLoaded(Result.success(categories)))
+                    let event = Event.categoriesLoaded(Result.success(categories))
+                    let result:Result<SystemError, Event> = Result.success(event)
                     runInUI {
                         continuation(result)
                     }
@@ -91,11 +92,13 @@ class ArchitectureKitTests: XCTestCase {
         
         let initialState = State.empty
         let uiBindings = [categoriesBinding, dummyBinding]
-        let feedback = [Feedback<State, Event, SystemError, AppContext>.react({_ in loadCategories()}, when: { $0.shouldLoadData})]
+        let feedback = [
+            Feedback<State, Event, SystemError, AppContext>.react({_ in loadCategories()}, when: { $0.shouldLoadData})
+        ]
         
         
-        let userAction = UserAction<State, Event, SystemError, AppContext>(from: Event.loadCategories)
-        let system = System.pure(
+        let userAction = UserAction<State, Event, SystemError, AppContext>(trigger: Event.loadCategories)
+        let system = TestSystem.pure(
             initialState: initialState,
             context: context,
             reducer: State.reduce,
