@@ -97,13 +97,13 @@ class ArchitectureKitTests: XCTestCase {
         ]
         
         
-        let userAction = UserAction<State, Event, SystemError, AppContext>(trigger: Event.loadCategories)
+        let action = CustomAction<State, Event, SystemError, AppContext>(trigger: Event.loadCategories)
         let system = TestSystem.pure(
             initialState: initialState,
             context: context,
             reducer: State.reduce,
             uiBindings: uiBindings,
-            userActions: [userAction],
+            actions: [action],
             feedback: feedback
         )
         
@@ -112,7 +112,7 @@ class ArchitectureKitTests: XCTestCase {
         }
         
         //Simulate user interaction - Tap button
-        userAction.execute()
+        action.execute()
         
         wait(for: [expect], timeout: 10.0)
     }

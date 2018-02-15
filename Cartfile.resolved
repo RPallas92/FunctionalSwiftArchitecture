@@ -1,6 +1,4 @@
-github "RPallas92/ArchitectureKit" "85558e90686379aa0f49b54e270512164ada10be"
+github "RPallas92/ArchitectureKit" "c5a58d61740cf533b8466ef743e2dcd2cc057ea9"
 github "SwiftKit/Cuckoo" "0.10.2"
-github "facile-it/FunctionalKit" "af473454c37cb9dcbc0f8ee7a8d4526c6a512a80"
-github "trill-lang/FileCheck" "0.0.5"
+github "facile-it/FunctionalKit" "baf2bce2505ea198151f13b36c911fbce9aaea7a"
 github "typelift/Abstract" "0.0.2"
-github "typelift/SwiftCheck" "0.9.1"

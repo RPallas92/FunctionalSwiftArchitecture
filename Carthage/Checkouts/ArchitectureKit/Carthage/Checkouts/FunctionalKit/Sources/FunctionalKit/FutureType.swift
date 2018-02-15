@@ -11,7 +11,7 @@ import Abstract
 // sourcery: escapingHOF
 public protocol FutureType: PureConstructible {
 	static func from(concrete: Concrete<ParameterType>) -> Self
-	func run (_ callback: @escaping (ParameterType) -> ())
+	@discardableResult func run (_ callback: @escaping (ParameterType) -> ()) -> Self
 	static func unfold(_ continuation: @escaping (@escaping (ParameterType) -> ()) -> ()) -> Self
 }
 
@@ -54,15 +54,18 @@ public final class Future<A>: FutureType {
 		return self
 	}
 
-	public func run(_ callback: @escaping (A) -> ()) {
+	@discardableResult
+	public func run(_ callback: @escaping (A) -> ()) -> Future<A> {
 		switch currentState {
 		case .idle:
 			callbacks.append(callback)
-			start()
+			return start()
 		case .running:
 			callbacks.append(callback)
+			return self
 		case .done(let value):
 			callback(value)
+			return self
 		}
 	}
 
@@ -109,13 +112,13 @@ extension FutureType {
     
     public static func lift<A,Applicative2>(_ function: @escaping (ParameterType, Applicative2.ParameterType) -> A) -> (Self, Applicative2) -> Future<A> where Applicative2: FutureType {
         return { (ap1, ap2) in
-            Concrete.pure(fcurry(function)) <*> ap1 <*> ap2
+            Concrete.pure(f.curry(function)) <*> ap1 <*> ap2
         }
     }
     
     public static func lift<A,Applicative2,Applicative3>(_ function: @escaping (ParameterType, Applicative2.ParameterType, Applicative3.ParameterType) -> A) -> (Self, Applicative2, Applicative3) -> Future<A> where Applicative2: FutureType, Applicative3: FutureType {
         return { ap1, ap2, ap3 in
-            Concrete.pure(fcurry(function)) <*> ap1 <*> ap2 <*> ap3
+            Concrete.pure(f.curry(function)) <*> ap1 <*> ap2 <*> ap3
         }
     }
 }

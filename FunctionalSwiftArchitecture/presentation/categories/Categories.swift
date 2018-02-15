@@ -10,7 +10,7 @@ import Foundation
 import FunctionalKit
 import ArchitectureKit
 
-typealias CategoriesUserAction = UserAction<CategoriesState, CategoriesEvent, JokeError, GetCategoriesContext>
+typealias CategoriesCustomAction = CustomAction<CategoriesState, CategoriesEvent, JokeError, GetCategoriesContext>
 typealias CategoriesFeedback = Feedback<CategoriesState, CategoriesEvent, JokeError, GetCategoriesContext>
 typealias CategoriesSystem = System<CategoriesState,CategoriesEvent,JokeError,GetCategoriesContext>
 
@@ -23,14 +23,14 @@ func onCategoriesViewLoaded(context: GetCategoriesContext) {
         }
     }
 
-    let screenLoadedAction = CategoriesUserAction(trigger: CategoriesEvent.loadCategories)
+    let screenLoadedAction = CategoriesCustomAction(trigger: CategoriesEvent.loadCategories)
     
     let system = CategoriesSystem.pure(
         initialState: CategoriesState.empty,
         context: context,
         reducer: CategoriesState.reduce,
         uiBindings: [uiBinding],
-        userActions: [screenLoadedAction],
+        actions: [screenLoadedAction],
         feedback: [CategoriesFeedback.react({_ in getCategories()}, when: { $0.shouldLoadCategories})]
     )
     

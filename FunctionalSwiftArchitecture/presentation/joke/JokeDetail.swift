@@ -10,7 +10,7 @@ import Foundation
 import ArchitectureKit
 
 
-typealias JokeUserAction = UserAction<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
+typealias JokeCustomAction = CustomAction<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
 typealias JokeFeedback = Feedback<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
 typealias JokeSystem = System<JokeState,JokeEvent,JokeError,GetRandomJokeContext>
 
@@ -25,14 +25,15 @@ func onJokeViewLoaded(context: GetRandomJokeContext, withCategoryName categoryNa
         }
     }
     
-    let screenLoadedAction = JokeUserAction(trigger: JokeEvent.loadJoke)
+    let screenLoadedAction = JokeCustomAction(trigger: JokeEvent.loadJoke)
+
     
     let system = JokeSystem.pure(
         initialState: JokeState.empty(categoryName),
         context: context,
         reducer: JokeState.reduce,
         uiBindings: [uiBinding],
-        userActions: [screenLoadedAction],
+        actions: [screenLoadedAction],
         feedback: [JokeFeedback.react({ getRandomJoke(forCategoryName: $0.categoryName)}, when: { $0.shouldLoadJoke})]
     )
     
