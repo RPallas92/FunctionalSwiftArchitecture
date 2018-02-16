@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ArchitectureKit
 
 class JokeDetailVC: UIViewController, JokeDetailView {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var randomJokeButton: UIButton!
+    
     var context:GetRandomJokeContext?
     var categoryName: String?
     
@@ -26,8 +29,10 @@ class JokeDetailVC: UIViewController, JokeDetailView {
     }
 
     func configureView() {
+        let randomeJokeAction = JokeUIButtonAction(button: self.randomJokeButton)
+        randomeJokeAction.onTap(trigger: JokeEvent.loadJoke)
         if let name = categoryName {
-            onJokeViewLoaded(context: self.context!, withCategoryName: name)
+            onJokeViewLoaded(context: self.context!, withCategoryName: name, withActions: [randomeJokeAction])
         }
     }
     

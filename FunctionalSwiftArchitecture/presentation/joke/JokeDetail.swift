@@ -9,12 +9,13 @@
 import Foundation
 import ArchitectureKit
 
-
+typealias JokeAction = Action<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
+typealias JokeUIButtonAction = UIButtonAction<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
 typealias JokeCustomAction = CustomAction<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
 typealias JokeFeedback = Feedback<JokeState, JokeEvent, JokeError, GetRandomJokeContext>
 typealias JokeSystem = System<JokeState,JokeEvent,JokeError,GetRandomJokeContext>
 
-func onJokeViewLoaded(context: GetRandomJokeContext, withCategoryName categoryName: String) {
+func onJokeViewLoaded(context: GetRandomJokeContext, withCategoryName categoryName: String, withActions actions: [JokeAction]) {
     
     let uiBinding: (JokeState) -> () = { state in
         if let joke = state.joke {
@@ -33,7 +34,7 @@ func onJokeViewLoaded(context: GetRandomJokeContext, withCategoryName categoryNa
         context: context,
         reducer: JokeState.reduce,
         uiBindings: [uiBinding],
-        actions: [screenLoadedAction],
+        actions: [screenLoadedAction] + actions,
         feedback: [JokeFeedback.react({ getRandomJoke(forCategoryName: $0.categoryName)}, when: { $0.shouldLoadJoke})]
     )
     
