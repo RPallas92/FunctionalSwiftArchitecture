@@ -26,21 +26,16 @@ func onJokeViewLoaded(context: GetRandomJokeContext, withCategoryName categoryNa
         }
     }
     
-    let screenLoadedAction = JokeCustomAction(trigger: JokeEvent.loadJoke)
-
-    
     let system = JokeSystem.pure(
         initialState: JokeState.empty(categoryName),
         context: context,
         reducer: JokeState.reduce,
         uiBindings: [uiBinding],
-        actions: [screenLoadedAction] + actions,
+        actions: actions,
         feedback: [JokeFeedback.react({ getRandomJoke(forCategoryName: $0.categoryName)}, when: { $0.shouldLoadJoke})]
     )
     
     system.addLoopCallback {
         print("System loop executed")
     }
-    
-    screenLoadedAction.execute()
 }

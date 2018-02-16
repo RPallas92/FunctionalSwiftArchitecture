@@ -16,24 +16,38 @@ class JokeDetailVC: UIViewController, JokeDetailView {
     var context:GetRandomJokeContext?
     var categoryName: String?
     
+    //System Actions
+    let loadJokeSystemAction = JokeCustomAction(trigger: JokeEvent.loadJoke)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDependencyGraph()
         configureView()
+        self.loadJokeSystemAction.execute()
     }
     
     func setUpDependencyGraph() {
-        if(self.context == nil) {
+        if self.context == nil {
             self.context = GetRandomJokeContext(view: self)
         }
     }
 
-    func configureView() {
-        let randomeJokeAction = JokeUIButtonAction(button: self.randomJokeButton)
-        randomeJokeAction.onTap(trigger: JokeEvent.loadJoke)
+   func configureView() {
         if let name = categoryName {
-            onJokeViewLoaded(context: self.context!, withCategoryName: name, withActions: [randomeJokeAction])
+            onJokeViewLoaded(context: self.context!, withCategoryName: name, withActions: getUserActions() + getSystemActions())
         }
+    }
+    
+    func getUserActions() -> [JokeAction] {
+        return [
+            JokeUIButtonAction.onTap(in: randomJokeButton, trigger: JokeEvent.loadJoke)
+        ]
+    }
+    
+    func getSystemActions() -> [JokeAction] {
+        return [
+            self.loadJokeSystemAction
+        ]
     }
     
     func drawJoke(joke: JokeViewModel) {
